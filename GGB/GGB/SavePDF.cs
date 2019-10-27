@@ -40,6 +40,7 @@ namespace GGB
                     document.Open();
                     document.NewPage();
 
+                    //TODO: добавить заголовок таблицы, изменить шрифт 
 
                     table = new PdfPTable(title.Count);
                     PdfPCell cell;
