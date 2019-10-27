@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace GGB
 {
-    interface ISaveExcel
+    public interface ISaveExcel
     {
+        void Save(string path, string title, List<string> titleColumn, List<string> data);
+
+        void Close();
+
     }
 }
