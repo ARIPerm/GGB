@@ -17,3 +17,6 @@ C:\Users\Иероглиф\Documents\GitHub\GGB\GGB\GGB\bin\Debug\normnfkc.nlp
 C:\Users\Иероглиф\Documents\GitHub\GGB\GGB\GGB\bin\Debug\normnfkd.nlp
 C:\Users\Иероглиф\Documents\GitHub\GGB\GGB\GGB\obj\Debug\GGB.exe
 C:\Users\Иероглиф\Documents\GitHub\GGB\GGB\GGB\obj\Debug\GGB.pdb
+S:\PortableGit\GGB\GGB\GGB\bin\Debug\GGB.exe.config
+S:\PortableGit\GGB\GGB\GGB\obj\Debug\GGB.exe
+S:\PortableGit\GGB\GGB\GGB\obj\Debug\GGB.pdb
