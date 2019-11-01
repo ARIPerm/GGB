@@ -8,14 +8,15 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace GGB
 {
-    public class SaveExcel_Maria : ISaveExcel
+    //MAria
+    public class SaveExcel : ISaveExcel
     {
         private Excel.Application application;
         private Excel.Workbook workbook;
         private Excel.Worksheet worksheet;
 
 
-        public SaveExcel_Maria()
+        public SaveExcel()
         {
             application = new Excel.Application();
             application.Visible = false;
@@ -28,6 +29,7 @@ namespace GGB
             {
                 if (path != null && title != null && titleColumn.Count != 0 && data.Count != 0)
                 {
+                    //TODO: добавить условие на случай если path и title ""
                     workbook = (Excel.Workbook)(application.Workbooks.Add());
                     worksheet = (Excel.Worksheet)workbook.ActiveSheet;
 
@@ -62,10 +64,15 @@ namespace GGB
 
                     workbook.SaveAs(path);
                 }
+                else
+                {
+
+                }
             }
             catch
             {
-                MessageBox.Show("Нет всех данных");
+                //через обработчик событий
+
             }
             finally
             {

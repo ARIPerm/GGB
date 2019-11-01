@@ -12,5 +12,10 @@ namespace GGB
 
         void OnSuccessRequest();
 
+
+
+        event EventHandler ErrorSave;
+
+        
     }
 }
