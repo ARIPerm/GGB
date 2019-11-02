@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GGB.Presentor;
 
 namespace GGB
 {
@@ -10,6 +11,8 @@ namespace GGB
     {
 
         void Save(string path, List<string> title, List<string> data);
+
+        void setErrorListener(ErrorListener listener);
 
         void Close();
     }

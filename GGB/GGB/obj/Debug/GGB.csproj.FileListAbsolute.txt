@@ -20,3 +20,11 @@ C:\Users\Иероглиф\Documents\GitHub\GGB\GGB\GGB\obj\Debug\GGB.pdb
 S:\PortableGit\GGB\GGB\GGB\bin\Debug\GGB.exe.config
 S:\PortableGit\GGB\GGB\GGB\obj\Debug\GGB.exe
 S:\PortableGit\GGB\GGB\GGB\obj\Debug\GGB.pdb
+S:\PortableGit\GGB\GGB\GGB\obj\Debug\GGB.csprojResolveAssemblyReference.cache
+S:\PortableGit\GGB\GGB\GGB\obj\Debug\GGB.Form1.resources
+S:\PortableGit\GGB\GGB\GGB\obj\Debug\GGB.Properties.Resources.resources
+S:\PortableGit\GGB\GGB\GGB\obj\Debug\GGB.csproj.GenerateResource.Cache
+S:\PortableGit\GGB\GGB\GGB\bin\Debug\Database.mdf
+S:\PortableGit\GGB\GGB\GGB\bin\Debug\Database_log.ldf
+S:\PortableGit\GGB\GGB\GGB\bin\Debug\GGB.exe
+S:\PortableGit\GGB\GGB\GGB\bin\Debug\GGB.pdb

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Excel = Microsoft.Office.Interop.Excel;
+//using Excel = Microsoft.Office.Interop.Excel;
 
 namespace GGB
 {
-    
+    /*
     public class SaveExcel : ISaveExcel
     {
         private Excel.Application application;
@@ -88,5 +88,5 @@ namespace GGB
             workbook.Close();
             application.Quit();
         }
-    }
+    }*/
 }

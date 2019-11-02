@@ -8,15 +8,15 @@ namespace GGB
 {
     public class Publisher
     {
+        //public delegate void ErrorEventHandler(object sender, EventArguments e);
 
-        public delegate void ErrorEventHandler(object sender, EventArguments e);
-
-        public event ErrorEventHandler errorEvent;
+        public event EventHandler errorSaveEvent;
 
         public void RaiseErrorEvent()
         {
-            if (errorEvent != null)
-                errorEvent(this, new EventArguments("Error") );
+            if (errorSaveEvent != null)
+                errorSaveEvent(this, EventArgs.Empty);
         }
+
     }
 }

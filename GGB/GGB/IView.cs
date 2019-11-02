@@ -12,9 +12,7 @@ namespace GGB
 
         void OnSuccessRequest();
 
-
-
-        event EventHandler ErrorSave;
+        event EventHandler Button_Click;
 
         
     }
