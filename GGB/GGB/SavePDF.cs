@@ -26,8 +26,7 @@ namespace GGB
             document = new Document();
             baseFont = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             font = new Font(baseFont, Font.DEFAULTSIZE, Font.NORMAL);
-
-            
+           
         }
 
 
@@ -62,12 +61,8 @@ namespace GGB
 
                     document.Add(table);
                 }
-            }
-            catch (Exception e)
-            {
-                //MessageBox.Show("Нет данных для сохранения");
-                //через события
-                
+                else
+                    throw new SaveException("Нет данных для сохранения");
             }
             finally
             {
