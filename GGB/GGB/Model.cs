@@ -20,6 +20,6 @@ namespace GGB
         };
     interface IStudents
         {
-        void GetStudents ();
+        List<Student> GetStudents ();
         };
 }
