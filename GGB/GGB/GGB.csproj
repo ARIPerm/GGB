@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnumClass.cs" />
+    <Compile Include="EventArguments.cs" />
     <Compile Include="IBasePresentor.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="Model.cs" />
@@ -78,6 +79,7 @@
     </Compile>
     <Compile Include="ISaveExcel.cs" />
     <Compile Include="ISavePDF.cs" />
+    <Compile Include="Publisher.cs" />
     <Compile Include="SaveExcel.cs" />
     <Compile Include="SavePDF.cs" />
     <Compile Include="Program.cs" />

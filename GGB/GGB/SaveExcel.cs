@@ -8,7 +8,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace GGB
 {
-    //MAria
+    
     public class SaveExcel : ISaveExcel
     {
         private Excel.Application application;

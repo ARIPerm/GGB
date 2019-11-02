@@ -11,7 +11,7 @@ using iTextSharp.text.pdf;
 
 namespace GGB
 {
-    //Maria
+    
     public class SavePDF : ISavePDF
     {
         private BaseFont baseFont;
