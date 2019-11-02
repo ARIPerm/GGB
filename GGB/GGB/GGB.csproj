@@ -66,6 +66,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBUtils.cs" />
+    <Compile Include="IGetDB.cs" />
     <Compile Include="EnumClass.cs" />
     <Compile Include="IBasePresentor.cs" />
     <Compile Include="IView.cs" />
