@@ -16,5 +16,7 @@ namespace GGB
         event EventHandler GetRequestClick;
         event EventHandler ShowRequestClick;
 
+        //получаем от пользователя текст запроса, через форму
+        string requestText { get; }
     }
 }
