@@ -20,25 +20,36 @@ namespace GGB
             presentor.AttachView(this);
         }
 
-        public string requestText => throw new NotImplementedException();
 
-        public event EventHandler GetRequestClick;
+        public string selectedUniversity { get { return comboUniversity.Text;} }
+
+        public List<string> setUniversity { set { comboUniversity.Items.Add(value); } }
+
+        public string averageRating { get { return  } }
+
         public event EventHandler SavePdfClick;
+        public event EventHandler GetRequestStudentUniversity;
 
         public void MessageError(string message)
         {
             MessageBox.Show(message);
         }
 
-        public void OnSuccessRequest()
+        public void OnSuccessRequest(List<Student> students)
         {
-            throw new NotImplementedException();
+            //TODO: выводим сообщение об успешном выполнение запроса, выводим в текстбокс результаты запроса
         }
 
         private void savePdf_Click(object sender, EventArgs e)
         {
             if (SavePdfClick != null)
                 SavePdfClick(this, EventArgs.Empty);
+        }
+
+        private void requestStudentUniversity_Click(object sender, EventArgs e)
+        {
+            if (GetRequestStudentUniversity != null)
+                GetRequestStudentUniversity(this, EventArgs.Empty);
         }
     }
 }

@@ -10,15 +10,20 @@ namespace GGB
     {
         void MessageError(string message);
 
-        void OnSuccessRequest();
+        void OnSuccessRequest(List<Student> students);
 
         //кнопки события, что пользователь нажал кнопку запроса
-        event EventHandler GetRequestClick;
+        event EventHandler GetRequestStudentUniversity;
 
         event EventHandler SavePdfClick;
 
         //получаем от пользователя текст запроса, через форму
-        string requestText { get; }
+
+        string selectedUniversity { get; }
+
+        string averageRating { get; }
+
+        List<string> setUniversity { set; }
 
     }
 }
