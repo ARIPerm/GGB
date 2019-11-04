@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Excel = Microsoft.Office.Interop.Excel;
+//using Excel = Microsoft.Office.Interop.Excel;
 
 namespace GGB
 {
-    public class SaveExcel_Maria : ISaveExcel
+    public class SaveExcel 
     {
-        private Excel.Application application;
+        /*private Excel.Application application;
         private Excel.Workbook workbook;
         private Excel.Worksheet worksheet;
 
 
-        public SaveExcel_Maria()
+        public SaveExcel()
         {
             application = new Excel.Application();
             application.Visible = false;
@@ -81,5 +81,6 @@ namespace GGB
             workbook.Close();
             application.Quit();
         }
+        */
     }
 }

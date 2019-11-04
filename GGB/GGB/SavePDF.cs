@@ -11,7 +11,7 @@ using iTextSharp.text.pdf;
 
 namespace GGB
 {
-    public class SavePDF_Maria : ISavePDF
+    public class SavePDF : ISavePDF
     {
         private BaseFont baseFont;
         private Font font;
@@ -19,12 +19,16 @@ namespace GGB
 
         private Document document;
 
+        private ErrorListener listener;
 
-        public SavePDF_Maria()
+
+
+        public SavePDF()
         {
             document = new Document();
             baseFont = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             font = new Font(baseFont, Font.DEFAULTSIZE, Font.NORMAL);
+
         }
 
 
@@ -59,10 +63,11 @@ namespace GGB
 
                     document.Add(table);
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Нет данных для сохранения");
+                else
+                {
+                    if (listener != null)
+                        listener.OnError("Ошибка");
+                }
             }
             finally
             {
@@ -75,6 +80,12 @@ namespace GGB
         {
             document.Close();
         }
-        
+
+
+        public void setErrorListener(ErrorListener listener)
+        {
+            this.listener = listener;
+        }
+
     }
 }
