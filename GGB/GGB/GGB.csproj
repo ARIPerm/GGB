@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="ISaveExcel.cs" />
     <Compile Include="ISavePDF.cs" />
+    <Compile Include="Publisher.cs" />
     <Compile Include="SaveExcel.cs" />
     <Compile Include="SavePDF.cs" />
     <Compile Include="Program.cs" />
