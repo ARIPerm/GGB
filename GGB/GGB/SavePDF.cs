@@ -19,9 +19,9 @@ namespace GGB
 
         private Document document;
 
-        Publisher publisher;
+        private ErrorListener listener;
 
-        public Publisher getPublisher { get { return publisher; } }
+
 
         public SavePDF()
         {
@@ -29,7 +29,6 @@ namespace GGB
             baseFont = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             font = new Font(baseFont, Font.DEFAULTSIZE, Font.NORMAL);
 
-            publisher = new Publisher();
         }
 
 
@@ -65,7 +64,10 @@ namespace GGB
                     document.Add(table);
                 }
                 else
-                    publisher.RaiseErrorEvent();
+                {
+                    if (listener != null)
+                        listener.OnError("Ошибка");
+                }
             }
             finally
             {
@@ -78,6 +80,12 @@ namespace GGB
         {
             document.Close();
         }
-        
+
+
+        public void setErrorListener(ErrorListener listener)
+        {
+            this.listener = listener;
+        }
+
     }
 }

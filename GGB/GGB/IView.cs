@@ -14,9 +14,11 @@ namespace GGB
 
         //кнопки события, что пользователь нажал кнопку запроса
         event EventHandler GetRequestClick;
-        event EventHandler ShowRequestClick;
+
+        event EventHandler SavePdfClick;
 
         //получаем от пользователя текст запроса, через форму
         string requestText { get; }
+
     }
 }
