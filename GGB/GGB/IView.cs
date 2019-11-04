@@ -12,5 +12,9 @@ namespace GGB
 
         void OnSuccessRequest();
 
+        //кнопки события, что пользователь нажал кнопку запроса
+        event EventHandler GetRequestClick;
+        event EventHandler ShowRequestClick;
+
     }
 }

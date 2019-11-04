@@ -18,8 +18,4 @@ namespace GGB
         {
         public List<Student> students = new List<Student>();
         };
-    interface IStudents
-        {
-        List<Student> GetStudents ();
-        };
 }

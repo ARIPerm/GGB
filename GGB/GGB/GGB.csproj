@@ -70,6 +70,7 @@
     <Compile Include="IGetDB.cs" />
     <Compile Include="EnumClass.cs" />
     <Compile Include="IBasePresentor.cs" />
+    <Compile Include="IStudent.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Form1.cs">
