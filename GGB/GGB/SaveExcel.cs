@@ -8,14 +8,14 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace GGB
 {
-    public class SaveExcel_Maria : ISaveExcel
+    public class SaveExcel : ISaveExcel
     {
         private Excel.Application application;
         private Excel.Workbook workbook;
         private Excel.Worksheet worksheet;
 
 
-        public SaveExcel_Maria()
+        public SaveExcel()
         {
             application = new Excel.Application();
             application.Visible = false;
