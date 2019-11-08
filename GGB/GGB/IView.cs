@@ -16,6 +16,7 @@ namespace GGB
 
         //кнопки события, что пользователь нажал кнопку запроса
         event EventHandler GetRequestStudentUniversity;
+        event EventHandler GetRequestAverageRating;
 
         event EventHandler SavePdfClick;
         event EventHandler SaveExcelClick;

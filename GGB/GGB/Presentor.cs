@@ -18,6 +18,8 @@ namespace GGB
             this.savePdf = savePdf;
             this.saveExcel = saveExcel;
 
+            
+
             savePdf.setErrorListener(this);
             saveExcel.setErrorListener(this);           
         }
@@ -36,7 +38,21 @@ namespace GGB
 
         private void View_SaveExcelClick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            view.SaveFileDialog();
+
+            List<string> titleColumn = new List<string>();
+            titleColumn.Add("");
+
+
+
+            List<string> data = new List<string>();
+            data.Add("vhcgncgn jcyhbn");
+            data.Add("vhcgncgn jcyhbn");
+            data.Add("vhcgncgn jcyhbn");
+            data.Add("vhcgncgn jcyhbn");
+            data.Add("vhcgncgn jcyhbn");
+
+            saveExcel.Save(view.pathGet, "title",titleColumn, data);
         }
 
         private void View_GetRequestStudentUniversity(object sender, EventArgs e)

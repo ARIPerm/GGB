@@ -35,11 +35,16 @@ namespace GGB
         public event EventHandler SavePdfClick;
         public event EventHandler SaveExcelClick;
         public event EventHandler GetRequestStudentUniversity;
+        public event EventHandler GetRequestAverageRating;
 
+        public void VisibleButtonSaveExcel ()
+        {
+            saveExcel.Visible = false;
+        }
 
         public void SaveFileDialog()
         {
-            saveFileDialog1.Filter = "Text files(*.pdf)|*.pdf";
+            saveFileDialog1.Filter = "Text files(*.pdf)|*.pdf | Excel (*.xsl)|*.pdf";
 
 
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)

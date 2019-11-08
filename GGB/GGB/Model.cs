@@ -6,44 +6,48 @@ using System.Threading.Tasks;
 
 namespace GGB
 {
-    public class Student
+    public class Model : IModel
     {
-        public string name { get; }
-        public string surname { get; }
-        public string patronymic { get; }
+        List<Student> students;
 
-        public Student (string name, string surname, string patronymic)
+        public List<Student> allStudent
         {
-            this.name = name;
-            this.surname = surname;
-            this.patronymic = patronymic;
-        }
-                
-        
-        /*
-        string name, surname, patronymic;
-        int id, age, rating, faculty, univer;
-        //public ReadName(name);
-        //public ReadSurname(surname);
-        //public ReadPatronymic(patronymic);
-        */
-    };
-    
-    public class Students
-    {
-        //public List<Student> students = new List<Student>();
-        
-        private List<Student> students;
-
-        public Students()
-        {
-            students = new List<Student>();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public void AddStudent(Student student)
+        public List<string> nameUniversity
         {
-            students.Add(student);
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
-        
-    };
+
+        public void ClearData()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RequestGetStudentRatingAverage(string university, string ratingAverage)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RequestGetStudentUniversity(string university)
+        {
+            throw new NotImplementedException();
+        }
+
+        //List<University> universities;
+
+        //List<Faculty> faculties;
+
+
+
+
+    }
+
 }
