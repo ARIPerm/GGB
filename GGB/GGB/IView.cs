@@ -11,6 +11,8 @@ namespace GGB
         void MessageError(string message);
 
         void OnSuccessRequest(List<Student> students);
+        
+        void SaveFileDialog();
 
         //кнопки события, что пользователь нажал кнопку запроса
         event EventHandler GetRequestStudentUniversity;
@@ -22,6 +24,8 @@ namespace GGB
         string selectedUniversity { get; }
 
         string averageRating { get; }
+        
+        string pathGet { get; }
 
         List<string> setUniversity { set; }
 

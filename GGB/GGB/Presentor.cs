@@ -10,17 +10,17 @@ namespace GGB
     {
         IView view;
         ISavePDF savePdf;
+        ISaveExcel saveExcel;
         IGetDB getBD;
 
-        public Presentor()
+        public Presentor(ISavePDF savePdf, ISaveExcel saveExcel)
         {
-            savePdf = new SavePDF();
+            this.savePdf = savePdf;
+            this.saveExcel = saveExcel;
 
             savePdf.setErrorListener(this);
-            
+            saveExcel.setErrorListener(this);           
         }
-
-
 
 
         public void AttachView (IView view)
@@ -40,12 +40,13 @@ namespace GGB
 
         public void OnError(string message)
         {
-            view.MessageError("Ошибка при сохранении");
+            view.MessageError(message);
         }
 
         private void View_SavePdfClick(object sender, EventArgs e)
-        {          
-            savePdf.Save(null, null, null);
+        {  
+            //обработка успешного сохранения и вывод через вью сообщения об успешном сохранении
+            savePdf.Save(view.pathGet, null, null);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace GGB
         {
             InitializeComponent();
 
-            Presentor presentor = new Presentor();
+            Presentor presentor = new Presentor(new SavePDF(), new SaveExcel());
             presentor.AttachView(this);
         }
 
@@ -25,11 +25,25 @@ namespace GGB
 
         public List<string> setUniversity { set { comboUniversity.Items.Add(value); } }
 
-        public string averageRating { get { return  } }
+        public string averageRating { get { return ratingAverage.Text; } }
+        
+        private string path;
+        
+        public string pathGet {get { return path; } }
+
 
         public event EventHandler SavePdfClick;
         public event EventHandler GetRequestStudentUniversity;
 
+        public void SaveFileDialog()
+        {
+        //закинуть на форму диалог сохранения
+           if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+
+            path = saveFileDialog1.FileName; 
+        }
+        
         public void MessageError(string message)
         {
             MessageBox.Show(message);
@@ -38,6 +52,10 @@ namespace GGB
         public void OnSuccessRequest(List<Student> students)
         {
             //TODO: выводим сообщение об успешном выполнение запроса, выводим в текстбокс результаты запроса
+            MessageBox.Show("Запрос выполнен успешно");
+            
+            
+            
         }
 
         private void savePdf_Click(object sender, EventArgs e)

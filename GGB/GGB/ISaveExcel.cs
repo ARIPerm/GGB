@@ -9,6 +9,8 @@ namespace GGB
     public interface ISaveExcel
     {
         void Save(string path, string title, List<string> titleColumn, List<string> data);
+        
+        void setErrorListener(ErrorListener listener);
 
         void Close();
 

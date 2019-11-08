@@ -13,5 +13,7 @@ namespace GGB
         List<string> GetFaculty(int PageNumber);
 
         List<string> GetUniversity(int PageNumber);
+        
+        int countPage { get; }
     }
 }
