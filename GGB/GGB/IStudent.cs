@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace GGB
 {
-    interface IStudent
+    public interface IStudents
     {
-       List<Student> GetStudents();
+        void AddStudents(Student student);
+
+        List<Student> getStudents { get; }
+
+        Student getStudent { get; }
+
+        int indexStudent { set; }
     }
 }
