@@ -16,7 +16,7 @@ namespace GGB
         {
             InitializeComponent();
 
-            Presentor presentor = new Presentor();
+            Presentor presentor = new Presentor(new SavePDF, new SaveExcel);
             presentor.AttachView(this);
         }
 
@@ -51,6 +51,10 @@ namespace GGB
         public void OnSuccessRequest(List<Student> students)
         {
             //TODO: выводим сообщение об успешном выполнение запроса, выводим в текстбокс результаты запроса
+            MessageBox.Show("Запрос выполнен успешно");
+            
+            
+            
         }
 
         private void savePdf_Click(object sender, EventArgs e)
