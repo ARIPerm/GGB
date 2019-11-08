@@ -10,17 +10,17 @@ namespace GGB
     {
         IView view;
         ISavePDF savePdf;
+        ISaveExcel saveExcel;
         IGetDB getBD;
 
-        public Presentor()
+        public Presentor(ISavePDF savePdf, ISaveExcel saveExcel)
         {
-            savePdf = new SavePDF();
+            this.savePdf = savePdf;
+            this.saveExcel = saveExcel;
 
             savePdf.setErrorListener(this);
-            
+            saveExcel.setErrorListener(this);           
         }
-
-
 
 
         public void AttachView (IView view)
@@ -44,8 +44,12 @@ namespace GGB
         }
 
         private void View_SavePdfClick(object sender, EventArgs e)
-        {          
-            savePdf.Save(null, null, null);
+        {    
+            //убрать во вью
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            //string filename = saveFileDialog1.FileName;
+            savePdf.Save(saveFileDialog1.FileName, null, null);
         }
     }
 }
