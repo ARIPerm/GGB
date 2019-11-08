@@ -26,10 +26,23 @@ namespace GGB
         public List<string> setUniversity { set { comboUniversity.Items.Add(value); } }
 
         public string averageRating { get { return  } }
+        
+        private string path;
+        
+        public string pathGet {get { return path; } }
 
         public event EventHandler SavePdfClick;
         public event EventHandler GetRequestStudentUniversity;
 
+        public void SaveFileDialog()
+        {
+        //закинуть на форму диалог сохранения
+           if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+
+            path = saveFileDialog1.FileName; 
+        }
+        
         public void MessageError(string message)
         {
             MessageBox.Show(message);
