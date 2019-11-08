@@ -40,16 +40,13 @@ namespace GGB
 
         public void OnError(string message)
         {
-            view.MessageError("Ошибка при сохранении");
+            view.MessageError(message);
         }
 
         private void View_SavePdfClick(object sender, EventArgs e)
-        {    
-            //убрать во вью
-            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
-                return;
-            //string filename = saveFileDialog1.FileName;
-            savePdf.Save(saveFileDialog1.FileName, null, null);
+        {  
+            //обработка успешного сохранения и вывод через вью сообщения об успешном сохранении
+            savePdf.Save(view.pathGet, null, null);
         }
     }
 }
