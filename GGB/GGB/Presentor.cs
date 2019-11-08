@@ -30,7 +30,13 @@ namespace GGB
             //view.setUniversity(university);
 
             view.SavePdfClick += View_SavePdfClick;
+            view.SaveExcelClick += View_SaveExcelClick;
             view.GetRequestStudentUniversity += View_GetRequestStudentUniversity;
+        }
+
+        private void View_SaveExcelClick(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void View_GetRequestStudentUniversity(object sender, EventArgs e)
@@ -44,8 +50,9 @@ namespace GGB
         }
 
         private void View_SavePdfClick(object sender, EventArgs e)
-        {  
+        {
             //обработка успешного сохранения и вывод через вью сообщения об успешном сохранении
+            view.SaveFileDialog();
             savePdf.Save(view.pathGet, null, null);
         }
     }

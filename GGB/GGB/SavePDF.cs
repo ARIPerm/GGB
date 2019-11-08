@@ -23,21 +23,13 @@ namespace GGB
 
 
 
-        public SavePDF()
-        {
-            document = new Document();
-            baseFont = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
-            font = new Font(baseFont, Font.DEFAULTSIZE, Font.NORMAL);
-
-        }
-
-
         public void Save(string path, List<string> title, List<string> data)
         {
             try
             {
                 if (path != null && title.Count != 0 && data.Count != 0)
                 {
+                    SetProperty();
 
                     PdfWriter.GetInstance(document, new FileStream(path, FileMode.Create));
 
@@ -66,7 +58,7 @@ namespace GGB
                 else
                 {
                     if (listener != null)
-                        listener.OnError("Ошибка");
+                        listener.OnError("Нет данных для сохранения и(или) не выбран путь для сохранения");
                 }
             }
             finally
@@ -87,5 +79,11 @@ namespace GGB
             this.listener = listener;
         }
 
+        private void SetProperty()
+        {
+            document = new Document();
+            baseFont = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            font = new Font(baseFont, Font.DEFAULTSIZE, Font.NORMAL);
+        }
     }
 }

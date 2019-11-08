@@ -18,6 +18,7 @@ namespace GGB
         event EventHandler GetRequestStudentUniversity;
 
         event EventHandler SavePdfClick;
+        event EventHandler SaveExcelClick;
 
         //получаем от пользователя текст запроса, через форму
 

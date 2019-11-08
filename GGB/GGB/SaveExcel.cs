@@ -10,16 +10,11 @@ namespace GGB
 {
     public class SaveExcel: ISaveExcel 
     {
-       private Excel.Application application;
+        private Excel.Application application;
         private Excel.Workbook workbook;
         private Excel.Worksheet worksheet;
 
         private ErrorListener listener;
-
-        public SaveExcel()
-        {
-            
-        }
 
 
         public void Save(string path, string title, List<string> titleColumn, List<string> data)
@@ -85,7 +80,6 @@ namespace GGB
 
             workbook = (Excel.Workbook)(application.Workbooks.Add());
             worksheet = (Excel.Worksheet)workbook.ActiveSheet;
-
         }
 
       
