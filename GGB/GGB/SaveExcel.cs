@@ -97,9 +97,11 @@ namespace GGB
             application.Quit();
         }
 
-        public void SetErrorListener(ErrorListener listener)
+        public void setErrorListener(ErrorListener listener)
         {
             this.listener = listener;
         }
+
+
     }
 }

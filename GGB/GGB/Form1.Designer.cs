@@ -34,8 +34,9 @@
             this.comboUniversity = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.mainTextBox = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ratingAverage = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,12 +98,12 @@
             this.mainTextBox.TabIndex = 2;
             this.mainTextBox.Text = "";
             // 
-            // textBox1
+            // ratingAverage
             // 
-            this.textBox1.Location = new System.Drawing.Point(84, 184);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.ratingAverage.Location = new System.Drawing.Point(84, 184);
+            this.ratingAverage.Name = "ratingAverage";
+            this.ratingAverage.Size = new System.Drawing.Size(100, 20);
+            this.ratingAverage.TabIndex = 3;
             // 
             // label2
             // 
@@ -120,7 +121,7 @@
             this.ClientSize = new System.Drawing.Size(515, 410);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.mainTextBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ratingAverage);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.savePdf);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -142,8 +143,9 @@
         private System.Windows.Forms.ComboBox comboUniversity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox mainTextBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ratingAverage;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

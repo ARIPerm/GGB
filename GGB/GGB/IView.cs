@@ -25,7 +25,7 @@ namespace GGB
 
         string averageRating { get; }
         
-        string path { get; }
+        string pathGet { get; }
 
         List<string> setUniversity { set; }
 

@@ -16,7 +16,7 @@ namespace GGB
         {
             InitializeComponent();
 
-            Presentor presentor = new Presentor(new SavePDF, new SaveExcel);
+            Presentor presentor = new Presentor(new SavePDF(), new SaveExcel());
             presentor.AttachView(this);
         }
 
@@ -25,11 +25,12 @@ namespace GGB
 
         public List<string> setUniversity { set { comboUniversity.Items.Add(value); } }
 
-        public string averageRating { get { return  } }
+        public string averageRating { get { return ratingAverage.Text; } }
         
         private string path;
         
         public string pathGet {get { return path; } }
+
 
         public event EventHandler SavePdfClick;
         public event EventHandler GetRequestStudentUniversity;
