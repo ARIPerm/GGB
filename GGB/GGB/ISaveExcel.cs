@@ -12,7 +12,7 @@ namespace GGB
         
         void setErrorListener(ErrorListener listener);
 
-        void Close();
+        void InstallExcel();
 
     }
 }

@@ -37,12 +37,13 @@
             this.ratingAverage = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.saveExcel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // savePdf
             // 
-            this.savePdf.Location = new System.Drawing.Point(236, 375);
+            this.savePdf.Location = new System.Drawing.Point(12, 334);
             this.savePdf.Name = "savePdf";
             this.savePdf.Size = new System.Drawing.Size(118, 23);
             this.savePdf.TabIndex = 0;
@@ -114,11 +115,22 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Средний рейтинг не менее";
             // 
+            // saveExcel
+            // 
+            this.saveExcel.Location = new System.Drawing.Point(136, 334);
+            this.saveExcel.Name = "saveExcel";
+            this.saveExcel.Size = new System.Drawing.Size(118, 23);
+            this.saveExcel.TabIndex = 5;
+            this.saveExcel.Text = "Сохранить в Excel";
+            this.saveExcel.UseVisualStyleBackColor = true;
+            this.saveExcel.Click += new System.EventHandler(this.saveExcel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 410);
+            this.Controls.Add(this.saveExcel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.mainTextBox);
             this.Controls.Add(this.ratingAverage);
@@ -146,6 +158,7 @@
         private System.Windows.Forms.TextBox ratingAverage;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button saveExcel;
     }
 }
 

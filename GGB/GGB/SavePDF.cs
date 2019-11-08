@@ -23,57 +23,45 @@ namespace GGB
 
 
 
-        public SavePDF()
-        {
-            document = new Document();
-            baseFont = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
-            font = new Font(baseFont, Font.DEFAULTSIZE, Font.NORMAL);
-
-        }
-
-
         public void Save(string path, List<string> title, List<string> data)
         {
-            try
+
+            if (path != null && title != null && data != null)
             {
-                if (path != null && title.Count != 0 && data.Count != 0)
+                SetProperty();
+
+                PdfWriter.GetInstance(document, new FileStream(path, FileMode.Create));
+
+                document.Open();
+                document.NewPage();
+
+                //TODO: добавить заголовок таблицы, изменить шрифт 
+
+                table = new PdfPTable(title.Count);
+                PdfPCell cell;
+                for (int i = 0; i < title.Count; i++)
                 {
-
-                    PdfWriter.GetInstance(document, new FileStream(path, FileMode.Create));
-
-                    document.Open();
-                    document.NewPage();
-
-                    //TODO: добавить заголовок таблицы, изменить шрифт 
-
-                    table = new PdfPTable(title.Count);
-                    PdfPCell cell;
-                    for (int i = 0; i < title.Count; i++)
-                    {
-                        cell = new PdfPCell(new Phrase(title[i], font));
-                        cell.BackgroundColor = BaseColor.LIGHT_GRAY;
-                        table.AddCell(cell);
-                    }
-
-                    for (int i = 0; i < data.Count; i++)
-                    {
-                        cell = new PdfPCell(new Phrase(data[i], font));
-                        table.AddCell(cell);
-                    }
-
-                    document.Add(table);
+                    cell = new PdfPCell(new Phrase(title[i], font));
+                    cell.BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(cell);
                 }
-                else
+
+                for (int i = 0; i < data.Count; i++)
                 {
-                    if (listener != null)
-                        listener.OnError("Ошибка");
+                    cell = new PdfPCell(new Phrase(data[i], font));
+                    table.AddCell(cell);
                 }
-            }
-            finally
-            {
+
+                document.Add(table);
                 Close();
             }
-        
+            else
+            {
+                if (listener != null)
+                    listener.OnError("Нет данных для сохранения и(или) не выбран путь для сохранения");
+                
+            }
+
         }
 
         public void Close()
@@ -87,5 +75,11 @@ namespace GGB
             this.listener = listener;
         }
 
+        private void SetProperty()
+        {
+            document = new Document();
+            baseFont = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            font = new Font(baseFont, Font.DEFAULTSIZE, Font.NORMAL);
+        }
     }
 }

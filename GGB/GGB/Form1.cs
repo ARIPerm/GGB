@@ -33,12 +33,21 @@ namespace GGB
 
 
         public event EventHandler SavePdfClick;
+        public event EventHandler SaveExcelClick;
         public event EventHandler GetRequestStudentUniversity;
+        public event EventHandler GetRequestAverageRating;
+
+        public void VisibleButtonSaveExcel ()
+        {
+            saveExcel.Visible = false;
+        }
 
         public void SaveFileDialog()
         {
-        //закинуть на форму диалог сохранения
-           if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+            saveFileDialog1.Filter = "Text files(*.pdf)|*.pdf | Excel (*.xsl)|*.pdf";
+
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
 
             path = saveFileDialog1.FileName; 
@@ -68,6 +77,12 @@ namespace GGB
         {
             if (GetRequestStudentUniversity != null)
                 GetRequestStudentUniversity(this, EventArgs.Empty);
+        }
+
+        private void saveExcel_Click(object sender, EventArgs e)
+        {
+            if (SaveExcelClick != null)
+                SaveExcelClick(this, EventArgs.Empty);
         }
     }
 }
