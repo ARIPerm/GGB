@@ -95,7 +95,12 @@ namespace GGB
 
         public void InstallExcel()
         {
-            throw new NotImplementedException();
+            Type officetype = Type.GetTypeFromProgID("Excel.Application");
+            if (officetype == null)
+            {
+                if (listener != null)
+                        listener.OnError("На ПК нет установленного Microsoft Excel");
+            }
         }
     }
 }
