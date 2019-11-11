@@ -93,14 +93,10 @@ namespace GGB
             this.listener = listener;
         }
 
-        public void InstallExcel()
+        public bool InstallExcel()
         {
             Type officetype = Type.GetTypeFromProgID("Excel.Application");
-            if (officetype == null)
-            {
-                if (listener != null)
-                        listener.OnError("На ПК нет установленного Microsoft Excel");
-            }
+            return officetype == null;            
         }
     }
 }
