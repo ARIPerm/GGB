@@ -30,7 +30,10 @@ namespace GGB
             this.view = view;
             //TODO: надо из бд взять список университетов и добавить его в комбобокс на вью 
             //view.setUniversity(university);
-
+            
+            if (saveExcel.InstallExcel)
+                view.VisibleButtonSaveExcel();
+                
             view.SavePdfClick += View_SavePdfClick;
             view.SaveExcelClick += View_SaveExcelClick;
             view.GetRequestStudentUniversity += View_GetRequestStudentUniversity;
