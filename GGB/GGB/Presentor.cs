@@ -11,14 +11,14 @@ namespace GGB
         IView view;
         ISavePDF savePdf;
         ISaveExcel saveExcel;
-        IGetDB getBD;
+        //IGetDB getBD;
+        IModel model;
 
-        public Presentor(ISavePDF savePdf, ISaveExcel saveExcel)
+        public Presentor(ISavePDF savePdf, ISaveExcel saveExcel, IModel model)
         {
             this.savePdf = savePdf;
             this.saveExcel = saveExcel;
-
-            
+            this.model = model;
 
             savePdf.setErrorListener(this);
             saveExcel.setErrorListener(this);           
@@ -28,8 +28,7 @@ namespace GGB
         public void AttachView (IView view)
         {
             this.view = view;
-            //TODO: надо из бд взять список университетов и добавить его в комбобокс на вью 
-            //view.setUniversity(university);
+            view.setUniversity(model.nameUniversity);
             
             if (saveExcel.InstallExcel)
                 view.VisibleButtonSaveExcel();
