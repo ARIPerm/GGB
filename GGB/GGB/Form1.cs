@@ -46,11 +46,13 @@ namespace GGB
         {
             saveFileDialog1.Filter = "Text files(*.pdf)|*.pdf | Excel (*.xsl)|*.pdf";
 
-
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+            {
+                path = null;
                 return;
-
-            path = saveFileDialog1.FileName; 
+            }
+            else
+                path = saveFileDialog1.FileName;       
         }
         
         public void MessageError(string message)
