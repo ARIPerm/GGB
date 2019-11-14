@@ -81,7 +81,7 @@ namespace GGB
             //TODO: выводим сообщение об успешном выполнение запроса, выводим в текстбокс результаты запроса
             MessageBox.Show("Запрос выполнен успешно");
 
-            
+            WriteDataGrid(students, title);
         }
 
         private void savePdf_Click(object sender, EventArgs e)
