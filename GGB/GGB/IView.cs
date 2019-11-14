@@ -14,6 +14,8 @@ namespace GGB
         
         void SaveFileDialog();
 
+        void VisibleButtonSaveExcel();
+
         //кнопки события, что пользователь нажал кнопку запроса
         event EventHandler GetRequestStudentUniversity;
         event EventHandler GetRequestAverageRating;

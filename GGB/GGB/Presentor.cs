@@ -28,9 +28,10 @@ namespace GGB
         public void AttachView (IView view)
         {
             this.view = view;
-            view.setUniversity(model.nameUniversity);
+            if (model.nameUniversity != null)
+                view.setUniversity = model.nameUniversity;
             
-            if (saveExcel.InstallExcel)
+            if (saveExcel.InstallExcel())
                 view.VisibleButtonSaveExcel();
                 
             view.SavePdfClick += View_SavePdfClick;

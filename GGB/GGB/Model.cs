@@ -22,7 +22,8 @@ namespace GGB
         {
             get
             {
-                throw new NotImplementedException();
+                //добавить список университетов
+                return null;
             }
         }
 

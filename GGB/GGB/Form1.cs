@@ -16,7 +16,7 @@ namespace GGB
         {
             InitializeComponent();
 
-            Presentor presentor = new Presentor(new SavePDF(), new SaveExcel());
+            Presentor presentor = new Presentor(new SavePDF(), new SaveExcel(), new Model());
             presentor.AttachView(this);
         }
 
