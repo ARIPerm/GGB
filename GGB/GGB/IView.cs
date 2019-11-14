@@ -10,7 +10,7 @@ namespace GGB
     {
         void MessageError(string message);
 
-        void OnSuccessRequest(List<Student> students);
+        void OnSuccessRequest(List<Student> students, List<string> title);
         
         void SaveFileDialog();
 

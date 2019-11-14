@@ -29,13 +29,29 @@ namespace GGB
         
         private string path;
         
-        public string pathGet {get { return path; } }
+        public string pathGet { get { return path; } }
 
 
         public event EventHandler SavePdfClick;
         public event EventHandler SaveExcelClick;
         public event EventHandler GetRequestStudentUniversity;
         public event EventHandler GetRequestAverageRating;
+
+
+
+        private void WriteDataGrid (List<Student> students, List<string> title)
+        {
+            dataGridView1.ColumnCount = title.Count-1;
+
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                dataGridView1.Columns[i].HeaderText = title[i];
+                dataGridView1.Columns[i].ReadOnly = true;
+            }
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                dataGridView1.Rows.Add(students[i].name, students[i].patronymic, students[i].surname);
+        }
 
         public void VisibleButtonSaveExcel ()
         {
@@ -60,12 +76,11 @@ namespace GGB
             MessageBox.Show(message);
         }
 
-        public void OnSuccessRequest(List<Student> students)
+        public void OnSuccessRequest(List<Student> students, List<string> title)
         {
             //TODO: выводим сообщение об успешном выполнение запроса, выводим в текстбокс результаты запроса
             MessageBox.Show("Запрос выполнен успешно");
-            
-            
+
             
         }
 
@@ -92,5 +107,7 @@ namespace GGB
             if (GetRequestAverageRating != null)
                 GetRequestAverageRating(this, EventArgs.Empty);
         }
+
+        
     }
 }
