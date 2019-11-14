@@ -22,7 +22,6 @@ namespace GGB
         private ErrorListener listener;
 
 
-
         public void Save(string path, List<string> title, List<string> data)
         {
 

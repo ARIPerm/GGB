@@ -25,7 +25,7 @@ namespace GGB
 
         public List<string> setUniversity { set { comboUniversity.Items.Add(value); } }
 
-        public string averageRating { get { return ratingAverage.Text; } }
+        public string averageRating { get { return comboRatingAverage.Text; } }
         
         private string path;
         
@@ -85,6 +85,12 @@ namespace GGB
         {
             if (SaveExcelClick != null)
                 SaveExcelClick(this, EventArgs.Empty);
+        }
+
+        private void requestAverageRating_Click(object sender, EventArgs e)
+        {
+            if (GetRequestAverageRating != null)
+                GetRequestAverageRating(this, EventArgs.Empty);
         }
     }
 }
