@@ -38,10 +38,12 @@
             this.saveExcel = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboRatingAverage = new System.Windows.Forms.ComboBox();
             this.requestAverageRating = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboRatingAverage = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -49,7 +51,7 @@
             // 
             // savePdf
             // 
-            this.savePdf.Location = new System.Drawing.Point(509, 434);
+            this.savePdf.Location = new System.Drawing.Point(265, 29);
             this.savePdf.Name = "savePdf";
             this.savePdf.Size = new System.Drawing.Size(118, 23);
             this.savePdf.TabIndex = 0;
@@ -62,7 +64,7 @@
             this.groupBox1.Controls.Add(this.requestStudentUniversity);
             this.groupBox1.Controls.Add(this.comboUniversity);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(224, 407);
+            this.groupBox1.Location = new System.Drawing.Point(280, 421);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(192, 109);
             this.groupBox1.TabIndex = 1;
@@ -107,7 +109,7 @@
             // 
             // saveExcel
             // 
-            this.saveExcel.Location = new System.Drawing.Point(509, 477);
+            this.saveExcel.Location = new System.Drawing.Point(389, 29);
             this.saveExcel.Name = "saveExcel";
             this.saveExcel.Size = new System.Drawing.Size(118, 23);
             this.saveExcel.TabIndex = 5;
@@ -118,9 +120,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 58);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(615, 357);
+            this.dataGridView1.Size = new System.Drawing.Size(503, 357);
             this.dataGridView1.TabIndex = 6;
             // 
             // groupBox2
@@ -130,12 +132,26 @@
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 407);
+            this.groupBox2.Location = new System.Drawing.Point(66, 421);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(192, 151);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Запрос по рейтингу";
+            // 
+            // comboRatingAverage
+            // 
+            this.comboRatingAverage.FormattingEnabled = true;
+            this.comboRatingAverage.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboRatingAverage.Location = new System.Drawing.Point(79, 88);
+            this.comboRatingAverage.Name = "comboRatingAverage";
+            this.comboRatingAverage.Size = new System.Drawing.Size(103, 21);
+            this.comboRatingAverage.TabIndex = 8;
             // 
             // requestAverageRating
             // 
@@ -164,25 +180,30 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Университет";
             // 
-            // comboRatingAverage
+            // comboBox2
             // 
-            this.comboRatingAverage.FormattingEnabled = true;
-            this.comboRatingAverage.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.comboRatingAverage.Location = new System.Drawing.Point(79, 88);
-            this.comboRatingAverage.Name = "comboRatingAverage";
-            this.comboRatingAverage.Size = new System.Drawing.Size(103, 21);
-            this.comboRatingAverage.TabIndex = 8;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(66, 31);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(63, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "label4";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 570);
+            this.ClientSize = new System.Drawing.Size(549, 578);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.saveExcel);
@@ -197,6 +218,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -217,6 +239,8 @@
         private System.Windows.Forms.Button requestAverageRating;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label4;
     }
 }
 

@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace GGB
 {
-    public class YandexTranslate
+    public class YandexTranslate : IYandexTranslate
     {
-
+        public string Translate(string text, Language language)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
