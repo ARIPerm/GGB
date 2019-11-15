@@ -16,8 +16,8 @@ namespace GGB
         {
             SqlConnection connect = new SqlConnection();
 
-            SqlCommand command = new SqlCommand("Select * from[Univerity]", connect);
-            SqlDataReader result =  command.ExecuteReader();
+            SqlCommand qUniver = new SqlCommand("Select * from[Univerity]", connect);
+            SqlDataReader result =  qUniver.ExecuteReader();
             while(result.Read())
             {
                 
@@ -28,9 +28,9 @@ namespace GGB
                 Console.WriteLine();
             }
             Console.ReadKey();
-        //private SqlCommand command = new SqlCommand();
+        //private SqlCommand qUniver = new SqlCommand();
 
-        //command.Connection.Open();
+        //qUniver.Connection.Open();
         ///DbCommand.ExecuteNonQuery();
         }
        
