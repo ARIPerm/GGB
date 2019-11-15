@@ -13,22 +13,18 @@ namespace GGB
     public class YandexTranslate : IYandexTranslate
     {
         public static string key = "trnsl.1.1.20191112T055406Z.915c1f20ea7a5b48.5c63753c3c7d537691187b1288e7d541747d23b8";
-        public string Translate(string text, Language language)
+        public string Translate(string text, string language)
         {
-            string lang = null;
-            if (language == Language.English)
-                lang = "English";
-            else
-                if (language == Language.Russian)
-                lang = "Russian";
-
             if (text.Length > 0)
             {
                 WebRequest request = WebRequest.Create("https://translate.yandex.net/api/v1.5/tr.json/translate?"
                     + "key=" + key
                     + "&text=" + text
-                    + "&lang=" + lang);
+                    + "&lang=" + language
+                    + "&format=plain");
 
+
+                //ОШИБКА ПОЛУЧЕНИЯ ОТВЕТА
                 WebResponse response = request.GetResponse();
                 using (StreamReader stream = new StreamReader(response.GetResponseStream()))
                 {

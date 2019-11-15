@@ -9,7 +9,7 @@ namespace GGB
     public interface ICustomString
     {
         void DefaultLanguage();
-        void SetLanguage(Language language);
+        void SetLanguage(string language);
 
         string selectedLanguage { get; set; }
         string nameRequestUniversity { get; set; }

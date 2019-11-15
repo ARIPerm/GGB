@@ -11,33 +11,30 @@ using System.Windows.Forms;
 namespace GGB
 {
     public partial class Form1 : Form, IView
-    {
+    {    
         public Form1()
         {
             InitializeComponent();
 
-            Presentor presentor = new Presentor(new SavePDF(), new SaveExcel(), new Model());
+            Presentor presentor = new Presentor(new SavePDF(), new SaveExcel(), new Model(), new CustomString(new YandexTranslate()));
             presentor.AttachView(this);
+
         }
 
+        private string path;
 
         public string selectedUniversity { get { return comboUniversity.Text;} }
-
         public List<string> setUniversity { set { comboUniversity.Items.Add(value); } }
-
-        public string averageRating { get { return comboRatingAverage.Text; } }
-        
-        private string path;
-        
+        public string averageRating { get { return comboRatingAverage.Text; } }              
         public string pathGet { get { return path; } }
+        public string selectedLanguage { get { return comboBox2.Text; } }
 
 
         public event EventHandler SavePdfClick;
         public event EventHandler SaveExcelClick;
         public event EventHandler GetRequestStudentUniversity;
         public event EventHandler GetRequestAverageRating;
-
-
+        public event EventHandler EditLanguage;
 
         private void WriteDataGrid (List<Student> students, List<string> title)
         {
@@ -108,6 +105,27 @@ namespace GGB
                 GetRequestAverageRating(this, EventArgs.Empty);
         }
 
-        
+        public void SetLanguage(ICustomString customString)
+        {
+            savePdf.Text = customString.buttonSavePdf;
+            saveExcel.Text = customString.buttonSaveExcel;
+
+            requestAverageRating.Text = customString.buttonNameRequest;
+            requestStudentUniversity.Text = customString.buttonNameRequest;
+
+            label1.Text = customString.university;
+            label2.Text = customString.ratingAverage;
+            label3.Text = customString.university;
+            label4.Text = customString.selectedLanguage;
+
+            groupBox1.Text = customString.nameRequestUniversity;
+            groupBox2.Text = customString.nameRequestRating;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (EditLanguage != null)
+                EditLanguage(this, EventArgs.Empty);
+        }
     }
 }

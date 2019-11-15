@@ -36,3 +36,5 @@ L:\GGB\GGB\GGB\bin\Debug\GGB.exe.config
 L:\GGB\GGB\GGB\bin\Debug\GGB.exe
 L:\GGB\GGB\GGB\bin\Debug\GGB.pdb
 L:\GGB\GGB\GGB\obj\Debug\GGB.csproj.CopyComplete
+L:\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.dll
+L:\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.xml

@@ -3,6 +3,6 @@ namespace GGB
 {
     public interface IYandexTranslate
     {
-        string Translate(string text, Language language);
+        string Translate(string text, string language);
     }
 }

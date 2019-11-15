@@ -16,7 +16,7 @@ namespace GGB
 
         void VisibleButtonSaveExcel();
 
-        void SetLanguage();
+        void SetLanguage(ICustomString customString);
 
         //кнопки события, что пользователь нажал кнопку запроса
         event EventHandler GetRequestStudentUniversity;
@@ -24,6 +24,8 @@ namespace GGB
 
         event EventHandler SavePdfClick;
         event EventHandler SaveExcelClick;
+
+        event EventHandler EditLanguage;
 
         //получаем от пользователя текст запроса, через форму
 
@@ -34,6 +36,8 @@ namespace GGB
         string pathGet { get; }
 
         List<string> setUniversity { set; }
+
+        string selectedLanguage { get; }
 
     }
 }
