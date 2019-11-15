@@ -38,3 +38,5 @@ L:\GGB\GGB\GGB\bin\Debug\GGB.pdb
 L:\GGB\GGB\GGB\obj\Debug\GGB.csproj.CopyComplete
 L:\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.dll
 L:\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.xml
+S:\PortableGit\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.dll
+S:\PortableGit\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.xml

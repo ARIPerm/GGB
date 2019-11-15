@@ -40,8 +40,22 @@ namespace GGB
             buttonSaveExcel = "Сохранить в Excel";
         }
 
-        public void SetLanguage(string language)
+        public void SetLanguage(string lang)
         {
+            string language;
+            try
+            {
+                language = Utils.getLang(lang);
+            }
+            catch (Utils.LangExeption e)
+            {
+
+            }
+            finally
+            {
+                language = "ru-en";
+            }
+            
             nameRequestUniversity = yandexTranslate.Translate(nameRequestUniversity, language);
             nameRequestRating = yandexTranslate.Translate(nameRequestRating, language);
 
