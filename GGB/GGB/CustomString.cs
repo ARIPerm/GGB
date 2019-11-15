@@ -17,6 +17,15 @@ namespace GGB
         public string buttonSaveExcel { get; set; }
         public string selectedLanguage { get; set; }
 
+        IYandexTranslate yandexTranslate;
+
+        public CustomString(IYandexTranslate yandexTranslate)
+        {
+            this.yandexTranslate = yandexTranslate;
+
+            DefaultLanguage();
+        }
+
         public void DefaultLanguage()
         {
             nameRequestUniversity = "Запрос по университетам";
@@ -24,6 +33,7 @@ namespace GGB
 
             university = "Выберите университет:";
             ratingAverage = "Средний рейтинг не менее:";
+            selectedLanguage = "Выберите язык интерфейса:";
 
             buttonNameRequest = "Получить список студентов";
             buttonSavePdf = "Сохранить в PDF";
@@ -32,7 +42,15 @@ namespace GGB
 
         public void SetLanguage(Language language)
         {
-            throw new NotImplementedException();
+            nameRequestUniversity = yandexTranslate.Translate(nameRequestUniversity, language);
+            nameRequestRating = yandexTranslate.Translate(nameRequestRating, language);
+
+            university = yandexTranslate.Translate(university, language);
+            ratingAverage = yandexTranslate.Translate(ratingAverage, language);
+
+            buttonNameRequest = yandexTranslate.Translate(buttonNameRequest, language);
+            buttonSavePdf = yandexTranslate.Translate(buttonSavePdf, language);
+            buttonSaveExcel = yandexTranslate.Translate(buttonSaveExcel, language);
         }
     }
 }
