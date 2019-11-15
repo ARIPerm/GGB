@@ -42,8 +42,8 @@ namespace GGB
 
         public void SetLanguage(string lang)
         {
-            string language;
-            try
+            string language = "ru-en";
+            /*try
             {
                 language = Utils.getLang(lang);
             }
@@ -55,7 +55,7 @@ namespace GGB
             {
                 language = "ru-en";
             }
-            
+            */
             nameRequestUniversity = yandexTranslate.Translate(nameRequestUniversity, language);
             nameRequestRating = yandexTranslate.Translate(nameRequestRating, language);
 

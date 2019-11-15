@@ -75,9 +75,9 @@ namespace GGB
 
         public void OnSuccessRequest(List<Student> students, List<string> title)
         {
-            //TODO: выводим сообщение об успешном выполнение запроса, выводим в текстбокс результаты запроса
             MessageBox.Show("Запрос выполнен успешно");
 
+            dataGridView1.Rows.Clear();
             WriteDataGrid(students, title);
         }
 
