@@ -49,7 +49,6 @@ namespace GGB
             }
             catch (Utils.LangExeption e)
             {
-
             }
             finally
             {
