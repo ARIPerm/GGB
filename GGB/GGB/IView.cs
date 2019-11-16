@@ -8,11 +8,11 @@ namespace GGB
 {
     public interface IView
     {
-        void MessageError(string message);
+        void Message(string message);
 
         void OnSuccessRequest(List<Student> students, List<string> title);
         
-        void SaveFileDialog();
+        void SaveFileDialog(string format);
 
         void VisibleButtonSaveExcel();
 
@@ -25,7 +25,7 @@ namespace GGB
         event EventHandler SavePdfClick;
         event EventHandler SaveExcelClick;
 
-        event EventHandler EditLanguage;
+        event EventHandler СhangeLanguage;
 
         //получаем от пользователя текст запроса, через форму
 

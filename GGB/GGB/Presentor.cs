@@ -35,18 +35,18 @@ namespace GGB
             if (model.nameUniversity != null)
                 view.setUniversity = model.nameUniversity;
             
-            if (saveExcel.InstallExcel())
+            if (saveExcel.ExistenceExcel())
                 view.VisibleButtonSaveExcel();
                 
             view.SavePdfClick += View_SavePdfClick;
             view.SaveExcelClick += View_SaveExcelClick;
             view.GetRequestStudentUniversity += View_GetRequestStudentUniversity;
             view.GetRequestAverageRating += View_GetRequestAverageRating;
-            view.EditLanguage += View_EditLanguage;
+            view.СhangeLanguage += View_СhangeLanguage;
 
         }
 
-        private void View_EditLanguage(object sender, EventArgs e)
+        private void View_СhangeLanguage(object sender, EventArgs e)
         {
             customString.SetLanguage(view.selectedLanguage);
             view.SetLanguage(customString);
@@ -59,7 +59,7 @@ namespace GGB
 
         private void View_SaveExcelClick(object sender, EventArgs e)
         {
-            view.SaveFileDialog();
+            view.SaveFileDialog("excel");
 
             List<string> titleColumn = new List<string>();
             titleColumn.Add("");
@@ -74,6 +74,7 @@ namespace GGB
             data.Add("vhcgncgn jcyhbn");
 
             saveExcel.Save(view.pathGet, "title",titleColumn, data);
+            view.Message("Успешно сохранено");
         }
 
         private void View_GetRequestStudentUniversity(object sender, EventArgs e)
@@ -83,14 +84,28 @@ namespace GGB
 
         public void OnError(string message)
         {
-            view.MessageError(message);
+            view.Message(message);
         }
 
         private void View_SavePdfClick(object sender, EventArgs e)
         {
             //обработка успешного сохранения и вывод через вью сообщения об успешном сохранении
-            view.SaveFileDialog();
-            savePdf.Save(view.pathGet, null, null);
+            view.SaveFileDialog("pdf");
+
+            List<string> titleColumn = new List<string>();
+            titleColumn.Add("");
+
+
+
+            List<string> data = new List<string>();
+            data.Add("vhcgncgn jcyhbn");
+            data.Add("vhcgncgn jcyhbn");
+            data.Add("vhcgncgn jcyhbn");
+            data.Add("vhcgncgn jcyhbn");
+            data.Add("vhcgncgn jcyhbn");
+
+            savePdf.Save(view.pathGet, titleColumn, data);
+            view.Message("Успешно сохранено");
         }
     }
 }

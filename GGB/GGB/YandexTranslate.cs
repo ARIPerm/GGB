@@ -20,8 +20,7 @@ namespace GGB
                 WebRequest request = WebRequest.Create("https://translate.yandex.net/api/v1.5/tr.json/translate?"
                     + "key=" + key
                     + "&text=" + text
-                    + "&lang=" + "en-ru"
-                    + "&format=plain");
+                    + "&lang=" + language);
 
 
                 //ОШИБКА ПОЛУЧЕНИЯ ОТВЕТА

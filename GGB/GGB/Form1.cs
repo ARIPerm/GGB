@@ -24,7 +24,7 @@ namespace GGB
         private string path;
 
         public string selectedUniversity { get { return comboUniversity.Text;} }
-        public List<string> setUniversity { set { comboUniversity.Items.Add(value); } }
+        public List<string> setUniversity { set { comboUniversity.Items.Add(value); comboBoxUniversity.Items.Add(value); } }
         public string averageRating { get { return comboRatingAverage.Text; } }              
         public string pathGet { get { return path; } }
         public string selectedLanguage { get { return comboBox2.Text; } }
@@ -34,7 +34,7 @@ namespace GGB
         public event EventHandler SaveExcelClick;
         public event EventHandler GetRequestStudentUniversity;
         public event EventHandler GetRequestAverageRating;
-        public event EventHandler EditLanguage;
+        public event EventHandler СhangeLanguage;
 
         private void WriteDataGrid (List<Student> students, List<string> title)
         {
@@ -55,9 +55,15 @@ namespace GGB
             saveExcel.Visible = false;
         }
 
-        public void SaveFileDialog()
+        public void SaveFileDialog(string format)
         {
-            saveFileDialog1.Filter = "Text files(*.pdf)|*.pdf | Excel (*.xsl)|*.pdf";
+            if (format == "pdf")
+            {
+                saveFileDialog1.Filter = "Text files(*.pdf)|*.pdf";
+            }
+            else
+                if (format == "excel")
+                    saveFileDialog1.Filter = "Excel (*.xlsx)|*.xlsx";
 
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
             {
@@ -68,7 +74,7 @@ namespace GGB
                 path = saveFileDialog1.FileName;       
         }
         
-        public void MessageError(string message)
+        public void Message(string message)
         {
             MessageBox.Show(message);
         }
@@ -124,8 +130,8 @@ namespace GGB
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (EditLanguage != null)
-                EditLanguage(this, EventArgs.Empty);
+            if (СhangeLanguage != null)
+                СhangeLanguage(this, EventArgs.Empty);
         }
     }
 }

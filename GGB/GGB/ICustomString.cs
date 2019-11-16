@@ -10,6 +10,7 @@ namespace GGB
     {
         void DefaultLanguage();
         void SetLanguage(string language);
+        void SettingLaunguage(string lang);
 
         string selectedLanguage { get; set; }
         string nameRequestUniversity { get; set; }
