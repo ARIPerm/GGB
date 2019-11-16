@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,7 @@ namespace GGB
             {
                 if (path != "" && title != "")
                 {
-
-                    SetProperty();
+                    SetProperty(path);
 
                     //TODO: выделить цветом имя столбцов, нарисовать линии таблицы, изменить шрифт                 
                     Excel.Range range = (Excel.Range)worksheet.get_Range("B1", "E1").Cells;
@@ -69,23 +69,28 @@ namespace GGB
 
         }
 
-        private void SetProperty()
+        private void SetProperty(string path)
         {
             application = new Excel.Application();
             application.Visible = false;
             application.ScreenUpdating = false;
 
-            workbook = (Excel.Workbook)(application.Workbooks.Add());
-            worksheet = (Excel.Worksheet)workbook.ActiveSheet;
+            workbook = application.Workbooks.Add(1);
+            worksheet = (Excel.Worksheet)workbook.Sheets[1];
         }
 
 
 
         private void Close()
         {
-            //TODO: закрыть через процессы
-            workbook.Close();
-            application.Quit();
+            Process[] procList = Process.GetProcesses();
+            foreach (Process p in procList)
+            {
+                if (p.ProcessName.ToString().Trim().ToUpper() == "EXCEL")
+                {
+                    p.Kill();
+                }
+            }
         }
 
         public void setErrorListener(ErrorListener listener)

@@ -59,7 +59,7 @@ namespace GGB
 
         private void View_SaveExcelClick(object sender, EventArgs e)
         {
-            view.SaveFileDialog();
+            view.SaveFileDialog("excel");
 
             List<string> titleColumn = new List<string>();
             titleColumn.Add("");
@@ -89,8 +89,21 @@ namespace GGB
         private void View_SavePdfClick(object sender, EventArgs e)
         {
             //обработка успешного сохранения и вывод через вью сообщения об успешном сохранении
-            view.SaveFileDialog();
-            savePdf.Save(view.pathGet, null, null);
+            view.SaveFileDialog("pdf");
+
+            List<string> titleColumn = new List<string>();
+            titleColumn.Add("");
+
+
+
+            List<string> data = new List<string>();
+            data.Add("vhcgncgn jcyhbn");
+            data.Add("vhcgncgn jcyhbn");
+            data.Add("vhcgncgn jcyhbn");
+            data.Add("vhcgncgn jcyhbn");
+            data.Add("vhcgncgn jcyhbn");
+
+            savePdf.Save(view.pathGet, titleColumn, data);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace GGB
 
         void OnSuccessRequest(List<Student> students, List<string> title);
         
-        void SaveFileDialog();
+        void SaveFileDialog(string format);
 
         void VisibleButtonSaveExcel();
 

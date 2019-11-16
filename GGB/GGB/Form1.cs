@@ -55,9 +55,15 @@ namespace GGB
             saveExcel.Visible = false;
         }
 
-        public void SaveFileDialog()
+        public void SaveFileDialog(string format)
         {
-            saveFileDialog1.Filter = "Text files(*.pdf)|*.pdf | Excel (*.xsl)|*.pdf";
+            if (format == "pdf")
+            {
+                saveFileDialog1.Filter = "Text files(*.pdf)|*.pdf";
+            }
+            else
+                if (format == "excel")
+                    saveFileDialog1.Filter = "Excel (*.xlsx)|*.xlsx";
 
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
             {
