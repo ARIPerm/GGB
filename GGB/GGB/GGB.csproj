@@ -69,24 +69,24 @@
     <Compile Include="CustomString.cs" />
     <Compile Include="DBUtils.cs" />
     <Compile Include="ErrorListener.cs" />
-    <Compile Include="ICustomString.cs" />
-    <Compile Include="IGetDB.cs" />
+    <Compile Include="Interface_\ICustomString.cs" />
+    <Compile Include="Interface_\IGetDB.cs" />
     <Compile Include="EnumClass.cs" />
-    <Compile Include="IBasePresentor.cs" />
-    <Compile Include="IModel.cs" />
-    <Compile Include="IStudent.cs" />
-    <Compile Include="IView.cs" />
-    <Compile Include="IYandexTranslate.cs" />
-    <Compile Include="Model.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Interface_\IBasePresentor.cs" />
+    <Compile Include="Interface_\IModel.cs" />
+    <Compile Include="Interface_\IStudent.cs" />
+    <Compile Include="Interface_\IView.cs" />
+    <Compile Include="Interface_\IYandexTranslate.cs" />
+    <Compile Include="Model_\Model.cs" />
+    <Compile Include="View_\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="View_\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="ISaveExcel.cs" />
-    <Compile Include="ISavePDF.cs" />
-    <Compile Include="Presentor.cs" />
+    <Compile Include="Interface_\ISaveExcel.cs" />
+    <Compile Include="Interface_\ISavePDF.cs" />
+    <Compile Include="Presentor_\Presentor.cs" />
     <Compile Include="SaveExcel.cs" />
     <Compile Include="SavePDF.cs" />
     <Compile Include="Program.cs" />
@@ -94,7 +94,7 @@
     <Compile Include="Student.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="YandexTranslate.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="View_\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -170,5 +170,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
