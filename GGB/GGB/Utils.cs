@@ -9,6 +9,24 @@ namespace GGB
     public class Utils
     {
 
+        public const string PERM = "Пермь";
+        public const string MOSCOW = "Москва";
+
+
+        public static CityType GetCityTypeByName(string name)
+        {
+            switch(name)
+            {
+                case PERM:
+                    return CityType.Perm;
+                case MOSCOW:
+                    return CityType.Moscow;
+                default: throw new Exception();
+
+            }
+        }
+
+
 
         public static string getLang(string lang)
         {

@@ -66,10 +66,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="City.cs" />
+    <Compile Include="CityName.cs" />
+    <Compile Include="CityUtils.cs" />
     <Compile Include="Constant.cs" />
     <Compile Include="CustomString.cs" />
     <Compile Include="DBUtils.cs" />
     <Compile Include="ErrorListener.cs" />
+    <Compile Include="GetWeather.cs" />
+    <Compile Include="IGetWeather.cs" />
     <Compile Include="Interface_\ICustomString.cs" />
     <Compile Include="Interface_\IGetDB.cs" />
     <Compile Include="EnumClass.cs" />
@@ -94,6 +99,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Utils.cs" />
+    <Compile Include="Weather.cs" />
     <Compile Include="YandexTranslate.cs" />
     <EmbeddedResource Include="View_\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
