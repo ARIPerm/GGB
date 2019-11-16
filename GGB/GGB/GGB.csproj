@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constant.cs" />
     <Compile Include="CustomString.cs" />
     <Compile Include="DBUtils.cs" />
     <Compile Include="ErrorListener.cs" />

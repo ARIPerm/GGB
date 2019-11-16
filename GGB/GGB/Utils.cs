@@ -21,7 +21,7 @@ namespace GGB
                     return "ru";
                 case "Корейский":
                     return "ko";
-                default: throw new LangExeption("Не выбран язык для перевода"); 
+                default: throw new LangExeption(Constant.onErrorSetLanguage); 
             }
         }
 
