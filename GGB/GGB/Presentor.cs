@@ -35,18 +35,18 @@ namespace GGB
             if (model.nameUniversity != null)
                 view.setUniversity = model.nameUniversity;
             
-            if (saveExcel.InstallExcel())
+            if (saveExcel.ExistenceExcel())
                 view.VisibleButtonSaveExcel();
                 
             view.SavePdfClick += View_SavePdfClick;
             view.SaveExcelClick += View_SaveExcelClick;
             view.GetRequestStudentUniversity += View_GetRequestStudentUniversity;
             view.GetRequestAverageRating += View_GetRequestAverageRating;
-            view.EditLanguage += View_EditLanguage;
+            view.СhangeLanguage += View_СhangeLanguage;
 
         }
 
-        private void View_EditLanguage(object sender, EventArgs e)
+        private void View_СhangeLanguage(object sender, EventArgs e)
         {
             customString.SetLanguage(view.selectedLanguage);
             view.SetLanguage(customString);

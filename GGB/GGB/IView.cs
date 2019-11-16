@@ -25,7 +25,7 @@ namespace GGB
         event EventHandler SavePdfClick;
         event EventHandler SaveExcelClick;
 
-        event EventHandler EditLanguage;
+        event EventHandler СhangeLanguage;
 
         //получаем от пользователя текст запроса, через форму
 

@@ -24,7 +24,7 @@ namespace GGB
         private string path;
 
         public string selectedUniversity { get { return comboUniversity.Text;} }
-        public List<string> setUniversity { set { comboUniversity.Items.Add(value); } }
+        public List<string> setUniversity { set { comboUniversity.Items.Add(value); comboBoxUniversity.Items.Add(value); } }
         public string averageRating { get { return comboRatingAverage.Text; } }              
         public string pathGet { get { return path; } }
         public string selectedLanguage { get { return comboBox2.Text; } }
@@ -34,7 +34,7 @@ namespace GGB
         public event EventHandler SaveExcelClick;
         public event EventHandler GetRequestStudentUniversity;
         public event EventHandler GetRequestAverageRating;
-        public event EventHandler EditLanguage;
+        public event EventHandler СhangeLanguage;
 
         private void WriteDataGrid (List<Student> students, List<string> title)
         {
@@ -124,8 +124,8 @@ namespace GGB
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (EditLanguage != null)
-                EditLanguage(this, EventArgs.Empty);
+            if (СhangeLanguage != null)
+                СhangeLanguage(this, EventArgs.Empty);
         }
     }
 }

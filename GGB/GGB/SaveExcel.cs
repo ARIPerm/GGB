@@ -93,7 +93,7 @@ namespace GGB
             this.listener = listener;
         }
 
-        public bool InstallExcel()
+        public bool ExistenceExcel()
         {
             Type officetype = Type.GetTypeFromProgID("Excel.Application");
             return officetype == null;            

@@ -16,16 +16,19 @@ namespace GGB
             switch (lang)
             {
                 case "Английский":
-                    return "ru-en";
+                    return "en";
                 case "Русский":
-                    return "en-ru";
-                default: throw new LangExeption(); 
+                    return "ru";
+                case "Корейский":
+                    return "ko";
+                default: throw new LangExeption("Не выбран язык для перевода"); 
             }
         }
 
         public class LangExeption : Exception
         {
-
+            public LangExeption(string message) : base(message)
+            { }
         }
 
 

@@ -40,7 +40,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboRatingAverage = new System.Windows.Forms.ComboBox();
             this.requestAverageRating = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxUniversity = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -129,7 +129,7 @@
             // 
             this.groupBox2.Controls.Add(this.comboRatingAverage);
             this.groupBox2.Controls.Add(this.requestAverageRating);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.comboBoxUniversity);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(66, 421);
@@ -163,13 +163,13 @@
             this.requestAverageRating.UseVisualStyleBackColor = true;
             this.requestAverageRating.Click += new System.EventHandler(this.requestAverageRating_Click);
             // 
-            // comboBox1
+            // comboBoxUniversity
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(45, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(137, 21);
-            this.comboBox1.TabIndex = 2;
+            this.comboBoxUniversity.FormattingEnabled = true;
+            this.comboBoxUniversity.Location = new System.Drawing.Point(45, 43);
+            this.comboBoxUniversity.Name = "comboBoxUniversity";
+            this.comboBoxUniversity.Size = new System.Drawing.Size(137, 21);
+            this.comboBoxUniversity.TabIndex = 2;
             // 
             // label3
             // 
@@ -185,7 +185,8 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Английский",
-            "Русский"});
+            "Русский",
+            "Корейский"});
             this.comboBox2.Location = new System.Drawing.Point(37, 31);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
@@ -241,7 +242,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboRatingAverage;
         private System.Windows.Forms.Button requestAverageRating;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxUniversity;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label4;
