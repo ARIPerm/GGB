@@ -11,29 +11,50 @@ namespace GGB
         IView view;
         ISavePDF savePdf;
         ISaveExcel saveExcel;
-        IGetDB getBD;
+        //IGetDB getBD;
+        IModel model;
+        ICustomString customString;
 
-        public Presentor(ISavePDF savePdf, ISaveExcel saveExcel)
+        public Presentor(ISavePDF savePdf, ISaveExcel saveExcel, IModel model, ICustomString customString)
         {
             this.savePdf = savePdf;
             this.saveExcel = saveExcel;
-
-            
+            this.model = model;
+            this.customString = customString;
 
             savePdf.setErrorListener(this);
-            saveExcel.setErrorListener(this);           
+            saveExcel.setErrorListener(this); 
         }
 
 
         public void AttachView (IView view)
         {
             this.view = view;
-            //TODO: надо из бд взять список университетов и добавить его в комбобокс на вью 
-            //view.setUniversity(university);
+            view.SetLanguage(customString);
 
+            if (model.nameUniversity != null)
+                view.setUniversity = model.nameUniversity;
+            
+            if (saveExcel.InstallExcel())
+                view.VisibleButtonSaveExcel();
+                
             view.SavePdfClick += View_SavePdfClick;
             view.SaveExcelClick += View_SaveExcelClick;
             view.GetRequestStudentUniversity += View_GetRequestStudentUniversity;
+            view.GetRequestAverageRating += View_GetRequestAverageRating;
+            view.EditLanguage += View_EditLanguage;
+
+        }
+
+        private void View_EditLanguage(object sender, EventArgs e)
+        {
+            customString.SetLanguage(view.selectedLanguage);
+            view.SetLanguage(customString);
+        }
+
+        private void View_GetRequestAverageRating(object sender, EventArgs e)
+        {
+            
         }
 
         private void View_SaveExcelClick(object sender, EventArgs e)

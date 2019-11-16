@@ -10,9 +10,13 @@ namespace GGB
     {
         void MessageError(string message);
 
-        void OnSuccessRequest(List<Student> students);
+        void OnSuccessRequest(List<Student> students, List<string> title);
         
         void SaveFileDialog();
+
+        void VisibleButtonSaveExcel();
+
+        void SetLanguage(ICustomString customString);
 
         //кнопки события, что пользователь нажал кнопку запроса
         event EventHandler GetRequestStudentUniversity;
@@ -20,6 +24,8 @@ namespace GGB
 
         event EventHandler SavePdfClick;
         event EventHandler SaveExcelClick;
+
+        event EventHandler EditLanguage;
 
         //получаем от пользователя текст запроса, через форму
 
@@ -30,6 +36,8 @@ namespace GGB
         string pathGet { get; }
 
         List<string> setUniversity { set; }
+
+        string selectedLanguage { get; }
 
     }
 }
