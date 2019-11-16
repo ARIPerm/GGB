@@ -8,7 +8,7 @@ using System.Data.Common;
 
 namespace GGB
 {
-    class DBUtils
+    public class DBUtils
     {
         Form1 f1 = new Form1();
         static string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=usersdb;Integrated Security=True";

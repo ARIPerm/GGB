@@ -8,24 +8,13 @@ namespace GGB
 {
     public class Model : IModel
     {
-        List<Student> students;
+        private List<Student> students;
 
-        public List<Student> allStudent
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public List<Student> allStudent { get { return students; } }
+        
 
-        public List<string> nameUniversity
-        {
-            get
-            {
-                //добавить список университетов
-                return null;
-            }
-        }
+        public List<string> nameUniversity { get; }
+
 
         public void ClearData()
         {
