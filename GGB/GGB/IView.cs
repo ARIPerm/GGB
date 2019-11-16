@@ -8,7 +8,7 @@ namespace GGB
 {
     public interface IView
     {
-        void MessageError(string message);
+        void Message(string message);
 
         void OnSuccessRequest(List<Student> students, List<string> title);
         

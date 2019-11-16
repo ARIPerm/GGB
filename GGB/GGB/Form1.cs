@@ -74,7 +74,7 @@ namespace GGB
                 path = saveFileDialog1.FileName;       
         }
         
-        public void MessageError(string message)
+        public void Message(string message)
         {
             MessageBox.Show(message);
         }

@@ -74,6 +74,7 @@ namespace GGB
             data.Add("vhcgncgn jcyhbn");
 
             saveExcel.Save(view.pathGet, "title",titleColumn, data);
+            view.Message("Успешно сохранено");
         }
 
         private void View_GetRequestStudentUniversity(object sender, EventArgs e)
@@ -83,7 +84,7 @@ namespace GGB
 
         public void OnError(string message)
         {
-            view.MessageError(message);
+            view.Message(message);
         }
 
         private void View_SavePdfClick(object sender, EventArgs e)
@@ -104,6 +105,7 @@ namespace GGB
             data.Add("vhcgncgn jcyhbn");
 
             savePdf.Save(view.pathGet, titleColumn, data);
+            view.Message("Успешно сохранено");
         }
     }
 }
