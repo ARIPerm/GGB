@@ -23,5 +23,13 @@ namespace GGB
         public static string onErrorExcelEmptyPath = "Пустой путь для сохранения файла и(или) пустой текст заголовка для таблицы";
 
         public static string onErrorSetLanguage = "Не выбран язык для перевода";
+
+        public const string russian = "Русский";
+        public const string english = "Английский";
+        public const string korean = "Корейский";
+
+        
+
+
     }
 }

@@ -68,6 +68,8 @@ namespace GGB
             buttonSavePdf = yandexTranslate.Translate(buttonSavePdf, language);
             buttonSaveExcel = yandexTranslate.Translate(buttonSaveExcel, language);
 
+          
+
         }
 
 
