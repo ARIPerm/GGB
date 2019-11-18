@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GGB
 {
-    public class GetWeather : IGetWeather
+    public class GetWeather  
     {
-        public Weather IGetWeather.GetWeather(City city, string lang)
+        /*public Weather IGetWeather.GetWeather(City city, string lang)
         {
 
 
-        }
+        }*/
     }
 }
