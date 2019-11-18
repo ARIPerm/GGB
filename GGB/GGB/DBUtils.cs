@@ -10,7 +10,7 @@ namespace GGB
 {
     public class DBUtils
     {
-        Form1 f1 = new Form1();
+        MainView f1 = new MainView();
         static string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=usersdb;Integrated Security=True";
         private void executeQuery()
         {

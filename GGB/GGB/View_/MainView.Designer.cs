@@ -1,6 +1,6 @@
 ﻿namespace GGB
 {
-    partial class Form1
+    partial class MainView
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -183,10 +183,6 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Английский",
-            "Русский",
-            "Корейский"});
             this.comboBox2.Location = new System.Drawing.Point(37, 31);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
@@ -202,7 +198,7 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "label4";
             // 
-            // Form1
+            // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,7 +211,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.savePdf);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Name = "MainView";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

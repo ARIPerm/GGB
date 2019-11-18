@@ -31,6 +31,7 @@ namespace GGB
         {
             this.view = view;
             view.SetLanguage(customString);
+            
 
             if (model.nameUniversity != null)
                 view.SetUniversity = model.nameUniversity;

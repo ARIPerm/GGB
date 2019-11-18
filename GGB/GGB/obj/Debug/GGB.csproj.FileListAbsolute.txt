@@ -25,7 +25,6 @@ S:\PortableGit\GGB\GGB\GGB\bin\Debug\GGB.pdb
 S:\PortableGit\GGB\GGB\GGB\obj\Debug\GGB.csproj.ResolveComReference.cache
 L:\GGB\GGB\GGB\obj\Debug\GGB.csprojAssemblyReference.cache
 L:\GGB\GGB\GGB\obj\Debug\GGB.csproj.ResolveComReference.cache
-L:\GGB\GGB\GGB\obj\Debug\GGB.Form1.resources
 L:\GGB\GGB\GGB\obj\Debug\GGB.Properties.Resources.resources
 L:\GGB\GGB\GGB\obj\Debug\GGB.csproj.GenerateResource.cache
 L:\GGB\GGB\GGB\obj\Debug\GGB.exe
@@ -40,3 +39,4 @@ S:\PortableGit\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.dll
 S:\PortableGit\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.xml
 L:\GGB\GGB\GGB\bin\Debug\Model_\Database.mdf
 L:\GGB\GGB\GGB\bin\Debug\Model_\Database_log.ldf
+L:\GGB\GGB\GGB\obj\Debug\GGB.MainView.resources

@@ -10,14 +10,16 @@ using System.Windows.Forms;
 
 namespace GGB
 {
-    public partial class Form1 : Form, IView
+    public partial class MainView : Form, IView
     {    
-        public Form1()
+        public MainView()
         {
             InitializeComponent();
 
             Presentor presentor = new Presentor(new SavePDF(), new SaveExcel(), new Model(), new CustomString(new YandexTranslate()));
             presentor.AttachView(this);
+
+            comboBox2.Items.AddRange(Constant.comboLanguage);
 
         }
 
@@ -28,6 +30,7 @@ namespace GGB
         public string AverageRating { get { return comboRatingAverage.Text; } }              
         public string PathGet { get { return path; } }
         public string SelectedLanguage { get { return comboBox2.Text; } }
+
 
 
         public event EventHandler SavePdfClick;

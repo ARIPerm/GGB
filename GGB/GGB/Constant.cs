@@ -28,7 +28,8 @@ namespace GGB
         public const string english = "Английский";
         public const string korean = "Корейский";
 
-        
+
+        public static string[] comboLanguage = new string[3] { "Русский", "Английский", "Корейский" };
 
 
     }

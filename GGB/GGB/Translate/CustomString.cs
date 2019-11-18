@@ -9,8 +9,6 @@ namespace GGB
 {
     public class CustomString : ICustomString
     {
-
-
         public string nameRequestUniversity { get; set;  }
         public string nameRequestRating { get; set; }
         public string university { get; set; }
@@ -68,7 +66,8 @@ namespace GGB
             buttonSavePdf = yandexTranslate.Translate(buttonSavePdf, language);
             buttonSaveExcel = yandexTranslate.Translate(buttonSaveExcel, language);
 
-          
+            Constant.onSuccessRequestMessage = yandexTranslate.Translate(Constant.onSuccessRequestMessage, language);
+            Constant.onSuccessSaveMessage = yandexTranslate.Translate(Constant.onSuccessSaveMessage, language);
 
         }
 
