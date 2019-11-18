@@ -30,8 +30,6 @@ L:\GGB\GGB\GGB\obj\Debug\GGB.Properties.Resources.resources
 L:\GGB\GGB\GGB\obj\Debug\GGB.csproj.GenerateResource.cache
 L:\GGB\GGB\GGB\obj\Debug\GGB.exe
 L:\GGB\GGB\GGB\obj\Debug\GGB.pdb
-L:\GGB\GGB\GGB\bin\Debug\Database.mdf
-L:\GGB\GGB\GGB\bin\Debug\Database_log.ldf
 L:\GGB\GGB\GGB\bin\Debug\GGB.exe.config
 L:\GGB\GGB\GGB\bin\Debug\GGB.exe
 L:\GGB\GGB\GGB\bin\Debug\GGB.pdb
@@ -40,3 +38,5 @@ L:\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.dll
 L:\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.xml
 S:\PortableGit\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.dll
 S:\PortableGit\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.xml
+L:\GGB\GGB\GGB\bin\Debug\Model_\Database.mdf
+L:\GGB\GGB\GGB\bin\Debug\Model_\Database_log.ldf

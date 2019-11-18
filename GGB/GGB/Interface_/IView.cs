@@ -29,15 +29,15 @@ namespace GGB
 
         //получаем от пользователя текст запроса, через форму
 
-        string selectedUniversity { get; }
+        string SelectedUniversity { get; }
 
-        string averageRating { get; }
+        string AverageRating { get; }
         
-        string pathGet { get; }
+        string PathGet { get; }
 
-        List<string> setUniversity { set; }
+        List<string> SetUniversity { set; }
 
-        string selectedLanguage { get; }
+        string SelectedLanguage { get; }
 
     }
 }

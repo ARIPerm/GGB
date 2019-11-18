@@ -23,11 +23,11 @@ namespace GGB
 
         private string path;
 
-        public string selectedUniversity { get { return comboUniversity.Text;} }
-        public List<string> setUniversity { set { comboUniversity.Items.Add(value); comboBoxUniversity.Items.Add(value); } }
-        public string averageRating { get { return comboRatingAverage.Text; } }              
-        public string pathGet { get { return path; } }
-        public string selectedLanguage { get { return comboBox2.Text; } }
+        public string SelectedUniversity { get { return comboUniversity.Text;} }
+        public List<string> SetUniversity { set { comboUniversity.Items.Add(value); comboBoxUniversity.Items.Add(value); } }
+        public string AverageRating { get { return comboRatingAverage.Text; } }              
+        public string PathGet { get { return path; } }
+        public string SelectedLanguage { get { return comboBox2.Text; } }
 
 
         public event EventHandler SavePdfClick;
@@ -57,12 +57,12 @@ namespace GGB
 
         public void SaveFileDialog(string format)
         {
-            if (format == "pdf")
+            if (format == Constant.formatPdf)
             {
                 saveFileDialog1.Filter = "Text files(*.pdf)|*.pdf";
             }
             else
-                if (format == "excel")
+                if (format == Constant.formatExcel)
                     saveFileDialog1.Filter = "Excel (*.xlsx)|*.xlsx";
 
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
@@ -81,7 +81,7 @@ namespace GGB
 
         public void OnSuccessRequest(List<Student> students, List<string> title)
         {
-            MessageBox.Show("Запрос выполнен успешно");
+            MessageBox.Show(Constant.onSuccessRequestMessage);
 
             dataGridView1.Rows.Clear();
             WriteDataGrid(students, title);

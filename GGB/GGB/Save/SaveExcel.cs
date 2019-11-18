@@ -57,13 +57,13 @@ namespace GGB
                 else
                 {
                     if (listener != null)
-                        listener.OnError("Пустой путь для сохранения файла и (или) пустой текст заголовка для таблицы");
+                        listener.OnError(Constant.onErrorExcelEmptyPath);
                 }
             }
             else
             {
                 if (listener != null)
-                    listener.OnError("Нет данных для сохранения и(или) не выбран путь для сохранения");
+                    listener.OnError(Constant.onErrorExcelEmptyData);
             }
 
 

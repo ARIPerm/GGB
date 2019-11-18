@@ -33,7 +33,7 @@ namespace GGB
             view.SetLanguage(customString);
 
             if (model.nameUniversity != null)
-                view.setUniversity = model.nameUniversity;
+                view.SetUniversity = model.nameUniversity;
             
             if (saveExcel.ExistenceExcel())
                 view.VisibleButtonSaveExcel();
@@ -48,7 +48,7 @@ namespace GGB
 
         private void View_СhangeLanguage(object sender, EventArgs e)
         {
-            customString.SetLanguage(view.selectedLanguage);
+            customString.SetLanguage(view.SelectedLanguage);
             view.SetLanguage(customString);
         }
 
@@ -59,7 +59,7 @@ namespace GGB
 
         private void View_SaveExcelClick(object sender, EventArgs e)
         {
-            view.SaveFileDialog("excel");
+            view.SaveFileDialog(Constant.formatExcel);
 
             List<string> titleColumn = new List<string>();
             titleColumn.Add("");
@@ -73,8 +73,8 @@ namespace GGB
             data.Add("vhcgncgn jcyhbn");
             data.Add("vhcgncgn jcyhbn");
 
-            saveExcel.Save(view.pathGet, "title",titleColumn, data);
-            view.Message("Успешно сохранено");
+            saveExcel.Save(view.PathGet, "title",titleColumn, data);
+            view.Message(Constant.onSuccessSaveMessage);
         }
 
         private void View_GetRequestStudentUniversity(object sender, EventArgs e)
@@ -90,7 +90,7 @@ namespace GGB
         private void View_SavePdfClick(object sender, EventArgs e)
         {
             //обработка успешного сохранения и вывод через вью сообщения об успешном сохранении
-            view.SaveFileDialog("pdf");
+            view.SaveFileDialog(Constant.formatPdf);
 
             List<string> titleColumn = new List<string>();
             titleColumn.Add("");
@@ -104,8 +104,8 @@ namespace GGB
             data.Add("vhcgncgn jcyhbn");
             data.Add("vhcgncgn jcyhbn");
 
-            savePdf.Save(view.pathGet, titleColumn, data);
-            view.Message("Успешно сохранено");
+            savePdf.Save(view.PathGet, titleColumn, data);
+            view.Message(Constant.onSuccessSaveMessage);
         }
     }
 }

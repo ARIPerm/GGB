@@ -18,8 +18,6 @@ namespace GGB
         List<string> nameUniversity { get; }
         
 
-        //или хранить временно данные запросов, показывать их презентору и удалять
-        void ClearData();
 
         void RequestGetStudentUniversity(string university);
 
