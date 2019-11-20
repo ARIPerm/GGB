@@ -61,20 +61,7 @@ namespace GGB
         private void View_SaveExcelClick(object sender, EventArgs e)
         {
             view.SaveFileDialog(Constant.formatExcel);
-
-            List<string> titleColumn = new List<string>();
-            titleColumn.Add("");
-
-
-
-            List<string> data = new List<string>();
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-
-            saveExcel.Save(view.PathGet, "title",titleColumn, data);
+            saveExcel.Save(view.PathGet, null, null,null);
             view.Message(Constant.onSuccessSaveMessage);
         }
 
@@ -93,19 +80,7 @@ namespace GGB
             //обработка успешного сохранения и вывод через вью сообщения об успешном сохранении
             view.SaveFileDialog(Constant.formatPdf);
 
-            List<string> titleColumn = new List<string>();
-            titleColumn.Add("");
-
-
-
-            List<string> data = new List<string>();
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-
-            savePdf.Save(view.PathGet, titleColumn, data);
+            savePdf.Save(view.PathGet, null, null);
             view.Message(Constant.onSuccessSaveMessage);
         }
     }

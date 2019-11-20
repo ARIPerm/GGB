@@ -66,6 +66,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model_\Faculty.cs" />
+    <Compile Include="Model_\University.cs" />
     <Compile Include="Weather\City.cs" />
     <Compile Include="Weather\CityName.cs" />
     <Compile Include="Weather\CityUtils.cs" />
