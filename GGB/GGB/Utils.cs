@@ -12,6 +12,7 @@ namespace GGB
         public const string PERM = "Пермь";
         public const string MOSCOW = "Москва";
 
+        
 
         public static CityType GetCityTypeByName(string name)
         {
@@ -30,6 +31,7 @@ namespace GGB
 
         public static string getLang(string lang)
         {
+
 
             switch (lang)
             {

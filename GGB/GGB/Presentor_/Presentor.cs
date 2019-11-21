@@ -13,14 +13,14 @@ namespace GGB
         ISaveExcel saveExcel;
         //IGetDB getBD;
         IModel model;
-        ICustomString customString;
+        IUserString userString;
 
-        public Presentor(ISavePDF savePdf, ISaveExcel saveExcel, IModel model, ICustomString customString)
+        public Presentor(ISavePDF savePdf, ISaveExcel saveExcel, IModel model, IUserString userString)
         {
             this.savePdf = savePdf;
             this.saveExcel = saveExcel;
             this.model = model;
-            this.customString = customString;
+            this.userString = userString;
 
             savePdf.setErrorListener(this);
             saveExcel.setErrorListener(this); 
@@ -30,10 +30,11 @@ namespace GGB
         public void AttachView (IView view)
         {
             this.view = view;
-            view.SetLanguage(customString);
+            view.SetLanguage(userString);
+            
 
-            if (model.nameUniversity != null)
-                view.SetUniversity = model.nameUniversity;
+            if (model.GetNameUniversity != null)
+                view.SetUniversity = model.GetNameUniversity;
             
             if (saveExcel.ExistenceExcel())
                 view.VisibleButtonSaveExcel();
@@ -48,38 +49,25 @@ namespace GGB
 
         private void View_СhangeLanguage(object sender, EventArgs e)
         {
-            customString.SetLanguage(view.SelectedLanguage);
-            view.SetLanguage(customString);
+            userString.SetLanguage(view.SelectedLanguage);
+            view.SetLanguage(userString);
         }
 
         private void View_GetRequestAverageRating(object sender, EventArgs e)
         {
-            
+            //TODO: формируем запрос по данным view.selectedUniversity and view.averageRating
         }
 
         private void View_SaveExcelClick(object sender, EventArgs e)
         {
             view.SaveFileDialog(Constant.formatExcel);
-
-            List<string> titleColumn = new List<string>();
-            titleColumn.Add("");
-
-
-
-            List<string> data = new List<string>();
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-
-            saveExcel.Save(view.PathGet, "title",titleColumn, data);
+            saveExcel.Save(view.PathGet, null, null,null);
             view.Message(Constant.onSuccessSaveMessage);
         }
 
         private void View_GetRequestStudentUniversity(object sender, EventArgs e)
         {
-            //TODO: формируем запрос по данным view.selectedUniversity and view.averageRating
+            //TODO: формируем запрос по данным view.selectedUniversity
         }
 
         public void OnError(string message)
@@ -89,22 +77,9 @@ namespace GGB
 
         private void View_SavePdfClick(object sender, EventArgs e)
         {
-            //обработка успешного сохранения и вывод через вью сообщения об успешном сохранении
             view.SaveFileDialog(Constant.formatPdf);
 
-            List<string> titleColumn = new List<string>();
-            titleColumn.Add("");
-
-
-
-            List<string> data = new List<string>();
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-            data.Add("vhcgncgn jcyhbn");
-
-            savePdf.Save(view.PathGet, titleColumn, data);
+            savePdf.Save(view.PathGet, null, null);
             view.Message(Constant.onSuccessSaveMessage);
         }
     }

@@ -9,11 +9,21 @@ namespace GGB
     public class Model : IModel
     {
         private List<Student> students;
+        private List<University> universities;
+        private List<Faculty> faculties;
 
-        public List<Student> allStudent { get { return students; } }
-        
+        private DBUtils connect;
 
-        public List<string> nameUniversity { get; }
+        public List<Student> GetStudent { get { return students; } }
+        public List<string> GetNameUniversity { get; }
+        public List<University> GetUniversity { get { return universities; } }
+        public List<Faculty> GetFaculty { get { return faculties; } }
+
+
+        public Model()
+        {
+
+        }
 
 
         public void ClearData()
@@ -30,13 +40,6 @@ namespace GGB
         {
             throw new NotImplementedException();
         }
-
-        //List<University> universities;
-
-        //List<Faculty> faculties;
-
-
-
 
     }
 

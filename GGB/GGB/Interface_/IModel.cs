@@ -8,14 +8,10 @@ namespace GGB
 {
     public interface IModel
     {
-        List<Student> allStudent { get; }
-
-        //TODO: добавить классы университета и факультета, которые хранят структуры БД и интерфейсы этих классов
-        //List<University> allUniversity { get; }
-        //List<Faculty> allFaculty { get; }
-
-        //получить из БД список имен университетов можно через метод и заполнить данными nameUniversity
-        List<string> nameUniversity { get; }
+        List<Student> GetStudent { get; }
+        List<University> GetUniversity { get; }
+        List<Faculty> GetFaculty { get; }
+        List<string> GetNameUniversity { get; }
         
 
 

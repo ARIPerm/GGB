@@ -8,17 +8,17 @@ namespace GGB
 {
     public class Student
     {
-        public string name { get; }
-        public string surname { get; }
-        public string patronymic { get; }
-        public int id { get; }
+        public string GetName { get; }
+        public string GetSurname { get; }
+        public string GetPatronymic { get; }
+        public int GetID { get; }
 
         public Student(string name, string surname, string patronymic, int id)
         {
-            this.name = name;
-            this.surname = surname;
-            this.patronymic = patronymic;
-            this.id = id;
+            this.GetName = name;
+            this.GetSurname = surname;
+            this.GetPatronymic = patronymic;
+            this.GetID = id;
         }
 
     }
