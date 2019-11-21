@@ -22,8 +22,6 @@ namespace GGB
                     + "&text=" + text
                     + "&lang=" + language);
 
-
-                //ОШИБКА ПОЛУЧЕНИЯ ОТВЕТА
                 WebResponse response = request.GetResponse();
                 using (StreamReader stream = new StreamReader(response.GetResponseStream()))
                 {

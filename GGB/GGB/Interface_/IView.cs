@@ -16,7 +16,7 @@ namespace GGB
 
         void VisibleButtonSaveExcel();
 
-        void SetLanguage(ICustomString customString);
+        void SetLanguage(IUserString userString);
 
         //кнопки события, что пользователь нажал кнопку запроса
         event EventHandler GetRequestStudentUniversity;

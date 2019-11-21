@@ -16,7 +16,7 @@ namespace GGB
         {
             InitializeComponent();
 
-            Presentor presentor = new Presentor(new SavePDF(), new SaveExcel(), new Model(), new CustomString(new YandexTranslate()));
+            Presentor presentor = new Presentor(new SavePDF(), new SaveExcel(), new Model(), new UserString(new YandexTranslate()));
             presentor.AttachView(this);
 
             comboBox2.Items.AddRange(Constant.comboLanguage);
@@ -50,7 +50,7 @@ namespace GGB
             }
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                dataGridView1.Rows.Add(students[i].name, students[i].patronymic, students[i].surname);
+                dataGridView1.Rows.Add(students[i].GetName, students[i].GetPatronymic, students[i].GetSurname);
         }
 
         public void VisibleButtonSaveExcel ()
@@ -114,21 +114,24 @@ namespace GGB
                 GetRequestAverageRating(this, EventArgs.Empty);
         }
 
-        public void SetLanguage(ICustomString customString)
+        public void SetLanguage(IUserString userString)
         {
-            savePdf.Text = customString.buttonSavePdf;
-            saveExcel.Text = customString.buttonSaveExcel;
+            savePdf.Text = userString.buttonSavePdf;
+            saveExcel.Text = userString.buttonSaveExcel;
 
-            requestAverageRating.Text = customString.buttonNameRequest;
-            requestStudentUniversity.Text = customString.buttonNameRequest;
+            requestAverageRating.Text = userString.buttonNameRequest;
+            requestStudentUniversity.Text = userString.buttonNameRequest;
 
-            label1.Text = customString.university;
-            label2.Text = customString.ratingAverage;
-            label3.Text = customString.university;
-            label4.Text = customString.selectedLanguage;
+            label1.Text = userString.university;
+            label2.Text = userString.ratingAverage;
+            label3.Text = userString.university;
+            label4.Text = userString.selectedLanguage;
 
-            groupBox1.Text = customString.nameRequestUniversity;
-            groupBox2.Text = customString.nameRequestRating;
+            groupBox1.Text = userString.nameRequestUniversity;
+            groupBox2.Text = userString.nameRequestRating;
+
+            //comboBox2.Items.Clear();
+            //comboBox2.Items.AddRange(Constant.comboLanguage);
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
