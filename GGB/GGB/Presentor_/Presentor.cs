@@ -62,7 +62,8 @@ namespace GGB
         {
             view.SaveFileDialog(Constant.formatExcel);
             saveExcel.Save(view.PathGet, null, null,null);
-            view.Message(Constant.onSuccessSaveMessage);
+            //TODO: проверка что успешно сохранено и вывод сообщение пользователю
+            //view.Message(Constant.onSuccessSaveMessage);
         }
 
         private void View_GetRequestStudentUniversity(object sender, EventArgs e)
@@ -80,7 +81,8 @@ namespace GGB
             view.SaveFileDialog(Constant.formatPdf);
 
             savePdf.Save(view.PathGet, null, null);
-            view.Message(Constant.onSuccessSaveMessage);
+            //TODO: проверка что успешно сохранено и вывод сообщение пользователю
+            //view.Message(Constant.onSuccessSaveMessage);
         }
     }
 }
