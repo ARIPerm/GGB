@@ -12,7 +12,7 @@ namespace GGB
         private List<University> universities;
         private List<Faculty> faculties;
 
-        private DBUtils connect;
+        private DBUtil connect;
 
         public List<Student> GetStudent { get { return students; } }
         public List<string> GetNameUniversity { get; }
