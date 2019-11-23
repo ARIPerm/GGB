@@ -34,7 +34,6 @@ namespace GGB
                         listResult.Add(String.Format($"{result["Name"]}"));
                     }
                 }
-
             }
             catch
             {
@@ -45,10 +44,6 @@ namespace GGB
                 connect.Close();
                 connect.Dispose();
             }
-
         }
-
-
-
     }
 }

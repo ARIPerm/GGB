@@ -17,7 +17,6 @@ namespace GGB
 
         private ErrorListener listener;
 
-
         public void Save(string path, string title, List<string> titleColumn, List<string> data)
         {
             if (path != null && title != null && titleColumn != null && data != null)
@@ -25,7 +24,6 @@ namespace GGB
                 if (path != "" && title != "")
                 {
                     SetProperty(path);
-
                     //TODO: выделить цветом имя столбцов, нарисовать линии таблицы, изменить шрифт                 
                     Excel.Range range = (Excel.Range)worksheet.get_Range("B1", "E1").Cells;
                     range.Merge();
@@ -65,8 +63,6 @@ namespace GGB
                 if (listener != null)
                     listener.OnError(Constant.onErrorExcelEmptyData);
             }
-
-
         }
 
         private void SetProperty(string path)
@@ -78,8 +74,6 @@ namespace GGB
             workbook = application.Workbooks.Add(1);
             worksheet = (Excel.Worksheet)workbook.Sheets[1];
         }
-
-
 
         private void Close()
         {

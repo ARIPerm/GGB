@@ -13,6 +13,5 @@ namespace GGB
         void setErrorListener(ErrorListener listener);
 
         bool ExistenceExcel();
-
     }
 }

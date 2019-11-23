@@ -22,14 +22,12 @@ namespace GGB
         public IList<University> GetUniversity { get { return universities; } }
         public IList<Faculty> GetFaculty { get { return faculties; } }
 
-
         public Model()
         {
             //this.request = new RequestUniversity();
             getRequestStudent = new RequestStudent();
             NameUniversity();
         }
-
 
         private void NameUniversity()
         {
@@ -57,7 +55,5 @@ namespace GGB
         {
             throw new NotImplementedException();
         }
-
     }
-
 }

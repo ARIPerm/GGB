@@ -18,7 +18,6 @@ namespace GGB
 
         void SetLanguage(IUserString userString);
 
-        //кнопки события, что пользователь нажал кнопку запроса
         event EventHandler GetRequestStudentUniversity;
         event EventHandler GetRequestAverageRating;
 
@@ -26,8 +25,6 @@ namespace GGB
         event EventHandler SaveExcelClick;
 
         event EventHandler СhangeLanguage;
-
-        //получаем от пользователя текст запроса, через форму
 
         string SelectedUniversity { get; }
 

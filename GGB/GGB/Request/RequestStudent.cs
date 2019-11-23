@@ -34,7 +34,6 @@ namespace GGB
                         students.Add(student);
                     }
                 }
-
             }
             catch
             {

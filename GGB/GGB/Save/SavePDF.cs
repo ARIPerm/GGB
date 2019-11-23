@@ -16,11 +16,9 @@ namespace GGB
         private BaseFont baseFont;
         private Font font;
         private PdfPTable table;
-
         private Document document;
 
         private ErrorListener listener;
-
 
         public void Save(string path, List<string> title, List<string> data)
         {
@@ -57,17 +55,16 @@ namespace GGB
             else
             {
                 if (listener != null)
-                    listener.OnError("Нет данных для сохранения и(или) не выбран путь для сохранения");
-                
+                {
+                    listener.OnError(Constant.onErrorExcelEmptyData);
+                }            
             }
-
         }
 
         public void Close()
         {
             document.Close();
         }
-
 
         public void setErrorListener(ErrorListener listener)
         {

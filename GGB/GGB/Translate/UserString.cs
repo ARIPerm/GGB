@@ -9,8 +9,6 @@ namespace GGB
 {
     public class UserString : IUserString
     {
-
-
         public string nameRequestUniversity { get; set;  }
         public string nameRequestRating { get; set; }
         public string university { get; set; }

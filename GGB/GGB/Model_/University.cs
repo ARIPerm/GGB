@@ -16,7 +16,5 @@ namespace GGB
             this.GetNameUniversity = nameUniversity;
             this.GetIndex = index;
         }
-
-
     }
 }

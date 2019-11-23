@@ -20,6 +20,5 @@ namespace GGB
             this.GetPatronymic = patronymic;
             this.GetID = id;
         }
-
     }
 }
