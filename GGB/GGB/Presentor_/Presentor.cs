@@ -61,6 +61,7 @@ namespace GGB
         private void View_SaveExcelClick(object sender, EventArgs e)
         {
             view.SaveFileDialog(Constant.formatExcel);
+            
             saveExcel.Save(view.PathGet, null, null,null);
             //TODO: проверка что успешно сохранено и вывод сообщение пользователю
             //view.Message(Constant.onSuccessSaveMessage);

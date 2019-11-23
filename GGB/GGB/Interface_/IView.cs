@@ -35,7 +35,7 @@ namespace GGB
         
         string PathGet { get; }
 
-        List<string> SetUniversity { set; }
+        IList<string> SetUniversity { set; }
 
         string SelectedLanguage { get; }
 

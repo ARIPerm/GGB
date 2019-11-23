@@ -66,22 +66,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Request\DBSQLServerUtils.cs" />
+    <Compile Include="Interface_\IRequest.cs" />
     <Compile Include="Model_\Faculty.cs" />
     <Compile Include="Model_\University.cs" />
     <Compile Include="Enum\NameCity.cs" />
+    <Compile Include="Request\RequestStudent.cs" />
+    <Compile Include="Request\RequestUniversity.cs" />
     <Compile Include="Weather\City.cs" />
     <Compile Include="Weather\CityName.cs" />
     <Compile Include="Weather\CityUtils.cs" />
     <Compile Include="Constant.cs" />
     <Compile Include="Translate\UserString.cs" />
     <Compile Include="DBUtils.cs" />
-    <Compile Include="ErrorListener.cs" />
+    <Compile Include="Interface_\ErrorListener.cs" />
     <Compile Include="Weather\GetWeather.cs" />
     <Compile Include="Weather\IGetWeather.cs" />
     <Compile Include="Interface_\IUserString.cs" />
     <Compile Include="Interface_\IGetDB.cs" />
     <Compile Include="Enum\Language.cs" />
-    <Compile Include="Interface_\IBasePresentor.cs" />
     <Compile Include="Interface_\IModel.cs" />
     <Compile Include="Interface_\IStudent.cs" />
     <Compile Include="Interface_\IView.cs" />
@@ -131,11 +134,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model_\Database.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Model_\Database.mdf" />
     <Content Include="Model_\Database_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
   </ItemGroup>

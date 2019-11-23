@@ -8,18 +8,13 @@ namespace GGB
 {
     public interface IModel
     {
-        List<Student> GetStudent { get; }
-        List<University> GetUniversity { get; }
-        List<Faculty> GetFaculty { get; }
-        List<string> GetNameUniversity { get; }
-        
-
-
+        IList<Student> GetStudent { get; }
+        IList<University> GetUniversity { get; }
+        IList<Faculty> GetFaculty { get; }
+        IList<string> GetNameUniversity { get; }
+       
         void RequestGetStudentUniversity(string university);
 
-        void RequestGetStudentRatingAverage(string university, string ratingAverage);
-
-
-
+        void RequestGetStudentRatingAverage(string university, string ratingAverage);      
     }
 }
