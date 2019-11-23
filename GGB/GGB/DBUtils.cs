@@ -13,7 +13,7 @@ namespace GGB
         public static string сonnectionParam
         { get
             {
-                const string param = "Data Source =.\SQLEXPRESS;Initial Catalog = usersdb; Integrated Security = True";
+                const string param = @"Data Source =.\SQLEXPRESS;Initial Catalog = usersdb; Integrated Security = True";
                 return param;
             }
         }

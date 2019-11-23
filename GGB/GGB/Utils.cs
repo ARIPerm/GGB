@@ -20,20 +20,36 @@ namespace GGB
                 case MOSCOW:
                     return CityType.Moscow;
                 default:
-                    throw new Exception();              
+                    throw new CityException("");              
             }
         }
 
-        public static string getLang(string lang)
+        public static string getLang(string lang, string currentLang)
         {
+            string current = "";
+            switch (currentLang)
+            {
+                case "Английский":
+                    current = "en";
+                    break;
+                case "Русский":
+                    current = "ru";
+                    break;
+                case "Корейский":
+                    current = "ko";
+                    break;
+                default:
+                    break;
+            }
+
             switch (lang)
             {
                 case "Английский":
-                    return "en";
+                    return current +"-en";
                 case "Русский":
-                    return "ru";
+                    return current + "-ru";
                 case "Корейский":
-                    return "ko";
+                    return current + "-ko";
                 default: throw new LangExeption(Constant.onErrorSetLanguage);
             }
         }
@@ -43,6 +59,14 @@ namespace GGB
             private string message;
             public LangExeption(string message) : base(message)
             {
+            }
+        }
+
+        public class CityException: Exception
+        {
+            public CityException(string message): base (message)
+            {
+
             }
         }
     }

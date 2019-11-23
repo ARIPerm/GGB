@@ -37,10 +37,10 @@ namespace GGB
                 }
             }
         }
+
         public string AverageRating { get { return comboRatingAverage.Text; } }
         public string PathGet { get { return path; } }
         public string SelectedLanguage { get { return comboBox2.Text; } }
-
 
         public event EventHandler SavePdfClick;
         public event EventHandler SaveExcelClick;

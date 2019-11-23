@@ -35,6 +35,5 @@ namespace GGB
         IList<string> SetUniversity { set; }
 
         string SelectedLanguage { get; }
-
     }
 }

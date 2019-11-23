@@ -17,14 +17,16 @@ namespace GGB
         public string buttonSavePdf { get; set; }
         public string buttonSaveExcel { get; set; }
         public string selectedLanguage { get; set; }
-
+ 
         IYandexTranslate yandexTranslate;
+        private string currentLanguage;
 
         public UserString(IYandexTranslate yandexTranslate)
         {
             this.yandexTranslate = yandexTranslate;
 
             DefaultLanguage();
+            currentLanguage = Constant.russian;
         }
 
         public void DefaultLanguage()
@@ -46,7 +48,9 @@ namespace GGB
             string language = null;
             try
             {
-                language = Utils.getLang(lang);
+                language = Utils.getLang(lang, currentLanguage);
+
+                currentLanguage = lang;
             }
             catch (Utils.LangExeption e)
             {
@@ -88,7 +92,7 @@ namespace GGB
             string language = null;
             try
             {
-                language = Utils.getLang(lang);
+                language = Utils.getLang(lang, currentLanguage);
             }
             catch (Utils.LangExeption e)
             {

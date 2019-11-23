@@ -12,7 +12,7 @@ namespace GGB
         private List<University> universities;
         private List<Faculty> faculties;
 
-        private DBUtils connect;
+        //private DBUtils connect;
 
         private IRequest<string> request;
         private IRequest<Student> getRequestStudent;

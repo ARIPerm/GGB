@@ -83,7 +83,6 @@
     <Compile Include="Weather\GetWeather.cs" />
     <Compile Include="Weather\IGetWeather.cs" />
     <Compile Include="Interface_\IUserString.cs" />
-    <Compile Include="Interface_\IGetDB.cs" />
     <Compile Include="Enum\Language.cs" />
     <Compile Include="Interface_\IModel.cs" />
     <Compile Include="Interface_\IStudent.cs" />
