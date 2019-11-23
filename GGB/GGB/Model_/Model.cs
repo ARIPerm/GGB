@@ -15,6 +15,7 @@ namespace GGB
         private DBUtils connect;
 
         private IRequest<string> request;
+        private IRequest<Student> getRequestStudent;
 
         public List<Student> GetStudent { get { return students; } }
         public List<string> GetNameUniversity { get { return request.GetResult; } }
@@ -25,6 +26,7 @@ namespace GGB
         public Model()
         {
             //this.request = new RequestUniversity();
+            getRequestStudent = new RequestStudent();
             NameUniversity();
         }
 
@@ -36,14 +38,19 @@ namespace GGB
             
         }
 
-        public void ClearData()
+        private void ClearData()
         {
-            throw new NotImplementedException();
+            if (students.Count() != null)
+                students.Clear();
         }
 
         public void RequestGetStudentRatingAverage(string university, string ratingAverage)
         {
-            throw new NotImplementedException();
+            ClearData();
+            string textRequest = "SELECT..";
+            getRequestStudent.SetRequest(textRequest);
+
+            students = getRequestStudent.GetResult;
         }
 
         public void RequestGetStudentUniversity(string university)
