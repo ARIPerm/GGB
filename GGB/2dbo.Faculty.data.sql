@@ -1,0 +1,5 @@
+INSERT INTO [dbo].[Faculty] ([Id], [Name], [Deccan], [UniversityId]) VALUES (1, N'Химический     ', N'Лавриков       ', 1)
+INSERT INTO [dbo].[Faculty] ([Id], [Name], [Deccan], [UniversityId]) VALUES (2, N'Физический     ', N'Кораблёв       ', 3)
+INSERT INTO [dbo].[Faculty] ([Id], [Name], [Deccan], [UniversityId]) VALUES (3, N'ИВС            ', N'Дятлов         ', 2)
+INSERT INTO [dbo].[Faculty] ([Id], [Name], [Deccan], [UniversityId]) VALUES (4, N'Исторический   ', N'Таранов        ', 3)
+INSERT INTO [dbo].[Faculty] ([Id], [Name], [Deccan], [UniversityId]) VALUES (5, N'Аэрокосмический', N'Трятьяков      ', 2)
