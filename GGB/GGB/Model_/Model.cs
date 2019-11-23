@@ -17,10 +17,10 @@ namespace GGB
         private IRequest<string> request;
         private IRequest<Student> getRequestStudent;
 
-        public List<Student> GetStudent { get { return students; } }
-        public List<string> GetNameUniversity { get { return request.GetResult; } }
-        public List<University> GetUniversity { get { return universities; } }
-        public List<Faculty> GetFaculty { get { return faculties; } }
+        public IList<Student> GetStudent { get { return students; } }
+        public IList<string> GetNameUniversity { get { return request.GetResult; } }
+        public IList<University> GetUniversity { get { return universities; } }
+        public IList<Faculty> GetFaculty { get { return faculties; } }
 
 
         public Model()

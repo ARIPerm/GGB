@@ -26,7 +26,7 @@ namespace GGB
         private string path;
 
         public string SelectedUniversity { get { return comboUniversity.Text; } }
-        public List<string> SetUniversity
+        public IList<string> SetUniversity
         {
             set
             {
@@ -71,11 +71,11 @@ namespace GGB
         {
             if (format == Constant.formatPdf)
             {
-                saveFileDialog1.Filter = "Text files(*.pdf)|*.pdf";
+                saveFileDialog1.Filter = Constant.filterSavePdf;
             }
             else
                 if (format == Constant.formatExcel)
-                saveFileDialog1.Filter = "Excel (*.xlsx)|*.xlsx";
+                saveFileDialog1.Filter = Constant.filterSaveExcel;
 
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
             {

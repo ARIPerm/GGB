@@ -34,9 +34,6 @@ namespace GGB
 
         public static string selectUniversity = "SELECT * from [University]";
 
-
         public static string[] comboLanguage = new string[3] { "Русский", "Английский", "Корейский" };
-
-
     }
 }

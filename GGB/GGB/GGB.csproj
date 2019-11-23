@@ -85,7 +85,6 @@
     <Compile Include="Interface_\IUserString.cs" />
     <Compile Include="Interface_\IGetDB.cs" />
     <Compile Include="Enum\Language.cs" />
-    <Compile Include="Interface_\IBasePresentor.cs" />
     <Compile Include="Interface_\IModel.cs" />
     <Compile Include="Interface_\IStudent.cs" />
     <Compile Include="Interface_\IView.cs" />
@@ -135,11 +134,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model_\Database.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Model_\Database.mdf" />
     <Content Include="Model_\Database_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
   </ItemGroup>
