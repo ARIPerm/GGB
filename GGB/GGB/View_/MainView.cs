@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace GGB
 {
     public partial class MainView : Form, IView
-    {    
+    {
         public MainView()
         {
             InitializeComponent();
@@ -25,12 +25,21 @@ namespace GGB
 
         private string path;
 
-        public string SelectedUniversity { get { return comboUniversity.Text;} }
-        public List<string> SetUniversity { set { comboUniversity.Items.Add(value); comboBoxUniversity.Items.Add(value); } }
-        public string AverageRating { get { return comboRatingAverage.Text; } }              
+        public string SelectedUniversity { get { return comboUniversity.Text; } }
+        public List<string> SetUniversity
+        {
+            set
+            {
+                for (int i = 0; i < value.Count; i++)
+                {
+                    comboUniversity.Items.Add(value[i]);
+                    comboBoxUniversity.Items.Add(value[i]);
+                }
+            }
+        }
+        public string AverageRating { get { return comboRatingAverage.Text; } }
         public string PathGet { get { return path; } }
         public string SelectedLanguage { get { return comboBox2.Text; } }
-
 
 
         public event EventHandler SavePdfClick;
@@ -39,9 +48,9 @@ namespace GGB
         public event EventHandler GetRequestAverageRating;
         public event EventHandler СhangeLanguage;
 
-        private void WriteDataGrid (List<Student> students, List<string> title)
+        private void WriteDataGrid(List<Student> students, List<string> title)
         {
-            dataGridView1.ColumnCount = title.Count-1;
+            dataGridView1.ColumnCount = title.Count - 1;
 
             for (int i = 0; i < dataGridView1.Columns.Count; i++)
             {
@@ -53,7 +62,7 @@ namespace GGB
                 dataGridView1.Rows.Add(students[i].GetName, students[i].GetPatronymic, students[i].GetSurname);
         }
 
-        public void VisibleButtonSaveExcel ()
+        public void VisibleButtonSaveExcel()
         {
             saveExcel.Visible = false;
         }
@@ -66,7 +75,7 @@ namespace GGB
             }
             else
                 if (format == Constant.formatExcel)
-                    saveFileDialog1.Filter = "Excel (*.xlsx)|*.xlsx";
+                saveFileDialog1.Filter = "Excel (*.xlsx)|*.xlsx";
 
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
             {
@@ -74,9 +83,9 @@ namespace GGB
                 return;
             }
             else
-                path = saveFileDialog1.FileName;       
+                path = saveFileDialog1.FileName;
         }
-        
+
         public void Message(string message)
         {
             MessageBox.Show(message);

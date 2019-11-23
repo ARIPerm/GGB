@@ -29,6 +29,11 @@ namespace GGB
         public const string english = "Английский";
         public const string korean = "Корейский";
 
+        public static string universityStudentRequestText = "";
+        public static string averageRatingStudentRequestText = "";
+
+        public static string selectUniversity = "SELECT * from [University]";
+
 
         public static string[] comboLanguage = new string[3] { "Русский", "Английский", "Корейский" };
 

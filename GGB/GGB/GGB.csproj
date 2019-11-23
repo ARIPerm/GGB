@@ -66,9 +66,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBSQLServerUtils.cs" />
+    <Compile Include="IRequest.cs" />
     <Compile Include="Model_\Faculty.cs" />
     <Compile Include="Model_\University.cs" />
     <Compile Include="Enum\NameCity.cs" />
+    <Compile Include="RequestStudent.cs" />
+    <Compile Include="RequestUniversity.cs" />
     <Compile Include="Weather\City.cs" />
     <Compile Include="Weather\CityName.cs" />
     <Compile Include="Weather\CityUtils.cs" />

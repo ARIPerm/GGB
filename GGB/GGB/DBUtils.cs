@@ -37,4 +37,10 @@ namespace GGB
           
         }
 
+
+    public class BDConnecting
+    {
+
+    }
+
   }

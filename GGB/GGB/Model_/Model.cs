@@ -14,17 +14,27 @@ namespace GGB
 
         private DBUtils connect;
 
+        private IRequest<string> request;
+
         public List<Student> GetStudent { get { return students; } }
-        public List<string> GetNameUniversity { get; }
+        public List<string> GetNameUniversity { get { return request.GetResult; } }
         public List<University> GetUniversity { get { return universities; } }
         public List<Faculty> GetFaculty { get { return faculties; } }
 
 
         public Model()
         {
-
+            //this.request = new RequestUniversity();
+            NameUniversity();
         }
 
+
+        private void NameUniversity()
+        {
+            request = new RequestUniversity();
+            request.SetRequest(Constant.selectUniversity);
+            
+        }
 
         public void ClearData()
         {
