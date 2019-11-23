@@ -11,9 +11,10 @@ namespace GGB
     public class DBUtil
     {
         public static string сonnectionParam
-        { get
+        { 
+            get
             {
-                const string param = "Data Source =.\SQLEXPRESS;Initial Catalog = usersdb; Integrated Security = True";
+                const string param = @"Data Source =.\SQLEXPRESS;Initial Catalog = usersdb; Integrated Security = True";
                 return param;
             }
         }
@@ -57,38 +58,3 @@ namespace GGB
         }
     }
 }
-
-/*    
-For Memory
-int class DB
-public class DBUtils
-    {
-        MainView f1 = new MainView();
-        static string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=usersdb;Integrated Security=True";
-        private void executeQuery()
-        {
-            SqlConnection connect = new SqlConnection();
-
-            SqlCommand queryComand = new SqlCommand("Select * from[Univerity]", connect);
-            SqlDataReader result =  queryComand.ExecuteReader();
-            while(result.Read())
-            {
-                
-                Console.Write(String.Format($"{result["Id"]}"));
-                Console.Write(String.Format($"{result["Name"]}"));
-                Console.Write(String.Format($"{result["YearCreate"]}"));
-                Console.Write(String.Format($"{result["Rector"]}"));
-                Console.WriteLine();
-            }
-            Console.ReadKey();
-        //private SqlCommand queryComand = new SqlCommand();
-
-        //queryComand.Connection.Open();
-        ///DbCommand.ExecuteNonQuery();
-        }
-       
-          
-        }
-
-  }
-  */
