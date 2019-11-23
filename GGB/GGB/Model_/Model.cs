@@ -40,7 +40,7 @@ namespace GGB
 
         private void ClearData()
         {
-            if (students.Count() != null)
+            if (students.Count() != 0)
                 students.Clear();
         }
 
