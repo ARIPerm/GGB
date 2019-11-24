@@ -8,31 +8,24 @@ namespace GGB
 {
     public class Utils
     {
-
         public const string PERM = "Пермь";
         public const string MOSCOW = "Москва";
 
-        
-
         public static CityType GetCityTypeByName(string name)
         {
-            switch(name)
+            switch (name)
             {
                 case PERM:
                     return CityType.Perm;
                 case MOSCOW:
                     return CityType.Moscow;
-                default: throw new Exception();
-
+                default:
+                    throw new Exception();              
             }
         }
 
-
-
         public static string getLang(string lang)
         {
-
-
             switch (lang)
             {
                 case "Английский":
@@ -41,16 +34,16 @@ namespace GGB
                     return "ru";
                 case "Корейский":
                     return "ko";
-                default: throw new LangExeption(Constant.onErrorSetLanguage); 
+                default: throw new LangExeption(Constant.onErrorSetLanguage);
             }
         }
 
         public class LangExeption : Exception
         {
+            private string message;
             public LangExeption(string message) : base(message)
-            { }
+            {
+            }
         }
-
-
     }
 }
