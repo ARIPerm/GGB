@@ -8,7 +8,6 @@ namespace GGB
 {
     public class Model : IModel
     {
-        private List<Student> students;
         private List<University> universities;
         private List<Faculty> faculties;
 
@@ -17,47 +16,34 @@ namespace GGB
         private IRequest<string> request;
         private IRequest<Student> getRequestStudent;
 
-        public IList<Student> GetStudent { get { return students; } }
+        public IList<Student> GetStudent { get { return getRequestStudent.GetResult; } }
         public IList<string> GetNameUniversity { get { return request.GetResult; } }
         public IList<University> GetUniversity { get { return universities; } }
         public IList<Faculty> GetFaculty { get { return faculties; } }
 
-
         public Model()
         {
-            //this.request = new RequestUniversity();
             getRequestStudent = new RequestStudent();
             NameUniversity();
         }
-
 
         private void NameUniversity()
         {
             request = new RequestUniversity();
             request.SetRequest(Constant.selectUniversity);
-            
         }
 
-        private void ClearData()
+        public void RequestGetStudentRatingAverage(int university, int ratingAverage)
         {
-            if (students.Count() != 0)
-                students.Clear();
-        }
-
-        public void RequestGetStudentRatingAverage(string university, string ratingAverage)
-        {
-            ClearData();
-            string textRequest = "SELECT..";
+            string textRequest = Constant.universityStudentRequestText + university + Constant.averageRatingStudentRequestText + ratingAverage;
             getRequestStudent.SetRequest(textRequest);
-
-            students = getRequestStudent.GetResult;
         }
 
-        public void RequestGetStudentUniversity(string university)
+        public void RequestGetStudentUniversity(int university)
         {
-            throw new NotImplementedException();
+            string textRequest = Constant.universityStudentRequestText + university.ToString();
+            getRequestStudent.SetRequest(textRequest);
         }
-
     }
 
 }

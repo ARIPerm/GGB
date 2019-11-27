@@ -13,8 +13,8 @@ namespace GGB
         IList<Faculty> GetFaculty { get; }
         IList<string> GetNameUniversity { get; }
        
-        void RequestGetStudentUniversity(string university);
+        void RequestGetStudentUniversity(int university);
 
-        void RequestGetStudentRatingAverage(string university, string ratingAverage);      
+        void RequestGetStudentRatingAverage(int university, int ratingAverage);      
     }
 }

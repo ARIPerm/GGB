@@ -11,7 +11,6 @@ namespace GGB
         IView view;
         ISavePDF savePdf;
         ISaveExcel saveExcel;
-        //IGetDB getBD;
         IModel model;
         IUserString userString;
 
@@ -25,7 +24,6 @@ namespace GGB
             savePdf.setErrorListener(this);
             saveExcel.setErrorListener(this); 
         }
-
 
         public void AttachView (IView view)
         {
@@ -55,7 +53,14 @@ namespace GGB
 
         private void View_GetRequestAverageRating(object sender, EventArgs e)
         {
-            //TODO: формируем запрос по данным view.selectedUniversity and view.averageRating
+
+            List<string> title = new List<string>();
+            title.Add("ID");
+            title.Add("Name");
+            title.Add("Surname");
+            title.Add("Patronymic");
+            title.Add("AverageRating");
+            //model.RequestGetStudentRatingAverage();
         }
 
         private void View_SaveExcelClick(object sender, EventArgs e)
@@ -69,7 +74,15 @@ namespace GGB
 
         private void View_GetRequestStudentUniversity(object sender, EventArgs e)
         {
-            //TODO: формируем запрос по данным view.selectedUniversity
+            model.RequestGetStudentUniversity(view.SelectedUniversity);
+
+            List<string> title = new List<string>();
+            title.Add("ID");
+            title.Add("Name");
+            title.Add("Surname");
+            title.Add("Patronymic");
+
+            view.OnSuccessRequest((List<Student>)model.GetStudent, title);
         }
 
         public void OnError(string message)

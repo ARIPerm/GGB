@@ -34,7 +34,6 @@ L:\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.dll
 L:\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.xml
 S:\PortableGit\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.dll
 S:\PortableGit\GGB\GGB\GGB\bin\Debug\Newtonsoft.Json.xml
-L:\GGB\GGB\GGB\bin\Debug\Model_\Database.mdf
-L:\GGB\GGB\GGB\bin\Debug\Model_\Database_log.ldf
 L:\GGB\GGB\GGB\obj\Debug\GGB.MainView.resources
 S:\PortableGit\GGB\GGB\GGB\obj\Debug\GGB.MainView.resources
+L:\GGB\GGB\GGB\obj\Debug\GGB.View_.TestForm.resources

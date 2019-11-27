@@ -29,8 +29,8 @@ namespace GGB
         public const string english = "Английский";
         public const string korean = "Корейский";
 
-        public static string universityStudentRequestText = "";
-        public static string averageRatingStudentRequestText = "";
+        public static string universityStudentRequestText = "SELECT * from [Students] where [UniversityId] =";
+        public static string averageRatingStudentRequestText = "and [Rating] <";
 
         public static string selectUniversity = "SELECT * from [University]";
 
