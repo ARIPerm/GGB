@@ -38,7 +38,7 @@ namespace GGB
                 }
             }
         }
-        public int AverageRating { get { return comboRatingAverage.SelectedIndex; } }
+        public int AverageRating { get { return comboRatingAverage.SelectedIndex +1; } }
         public string PathGet { get { return path; } }
         public string SelectedLanguage { get { return comboBox2.Text; } }
 

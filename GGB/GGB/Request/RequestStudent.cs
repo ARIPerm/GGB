@@ -30,7 +30,7 @@ namespace GGB
                 {
                     while (result.Read())
                     {
-                        Student student = new Student(String.Format($"{result["Name"]}"), String.Format($"{result["Surname"]}"), String.Format($"{result["Patronymic"]}"), Convert.ToInt32(result["Id"]));
+                        Student student = new Student(String.Format($"{result["Name"]}"), String.Format($"{result["Surname"]}"), String.Format($"{result["Patronymic"]}"), Convert.ToInt32(result["Id"]), Convert.ToInt32(result["Rating"]), Convert.ToInt32(result["Age"]));
                         students.Add(student);
                     }
                 }

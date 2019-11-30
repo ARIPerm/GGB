@@ -53,14 +53,14 @@ namespace GGB
 
         private void View_GetRequestAverageRating(object sender, EventArgs e)
         {
-
             List<string> title = new List<string>();
             title.Add("ID");
             title.Add("Name");
             title.Add("Surname");
             title.Add("Patronymic");
             title.Add("AverageRating");
-            //model.RequestGetStudentRatingAverage();
+            model.RequestGetStudentRatingAverage(view.SelectedUniversityBox, view.AverageRating);
+            view.OnSuccessRequest((List<Student>)model.GetStudent, title);
         }
 
         private void View_SaveExcelClick(object sender, EventArgs e)
