@@ -13,7 +13,7 @@ namespace GGB
         //private static string path = @"S:\PortableGit\GGB\GGB\GGB\Model_\Database.mdf";
         private static string path = Directory.GetCurrentDirectory();
 
-        static string temp = path.Remove(19, path.Length - 19);
+        static string temp = path.Remove(7, path.Length - 7);
 
         public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + temp + @"GGB\GGB\Model_\Database.mdf;Integrated Security=True";
 

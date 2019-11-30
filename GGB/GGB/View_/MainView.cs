@@ -20,12 +20,13 @@ namespace GGB
             presentor.AttachView(this);
 
             comboBox2.Items.AddRange(Constant.comboLanguage);
-
         }
 
         private string path;
 
-        public string SelectedUniversity { get { return comboUniversity.Text; } }
+        public int SelectedUniversity { get { return comboUniversity.SelectedIndex + 1; } }
+        public int SelectedUniversityBox { get { return comboBoxUniversity.SelectedIndex + 1; } }
+
         public IList<string> SetUniversity
         {
             set
@@ -37,10 +38,9 @@ namespace GGB
                 }
             }
         }
-        public string AverageRating { get { return comboRatingAverage.Text; } }
+        public int AverageRating { get { return comboRatingAverage.SelectedIndex +1; } }
         public string PathGet { get { return path; } }
         public string SelectedLanguage { get { return comboBox2.Text; } }
-
 
         public event EventHandler SavePdfClick;
         public event EventHandler SaveExcelClick;
@@ -50,16 +50,19 @@ namespace GGB
 
         private void WriteDataGrid(List<Student> students, List<string> title)
         {
-            dataGridView1.ColumnCount = title.Count - 1;
+            dataGridView1.ColumnCount = title.Count;
 
-            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                dataGridView1.Columns[i].HeaderText = title[i];
-                dataGridView1.Columns[i].ReadOnly = true;
+                column.HeaderText = String.Concat(title[column.Index]);
+                column.ReadOnly = true;
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
 
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                dataGridView1.Rows.Add(students[i].GetName, students[i].GetPatronymic, students[i].GetSurname);
+            for (int i = 0; i < students.Count; i++)
+            {
+                dataGridView1.Rows.Add(students[i].GetID, students[i].GetName, students[i].GetSurname, students[i].GetPatronymic);
+            }
         }
 
         public void VisibleButtonSaveExcel()
@@ -86,6 +89,7 @@ namespace GGB
                 path = saveFileDialog1.FileName;
         }
 
+
         public void Message(string message)
         {
             MessageBox.Show(message);
@@ -97,6 +101,23 @@ namespace GGB
 
             dataGridView1.Rows.Clear();
             WriteDataGrid(students, title);
+        }
+
+        public void SetLanguage(IUserString userString)
+        {
+            savePdf.Text = userString.buttonSavePdf;
+            saveExcel.Text = userString.buttonSaveExcel;
+
+            requestAverageRating.Text = userString.buttonNameRequest;
+            requestStudentUniversity.Text = userString.buttonNameRequest;
+
+            label1.Text = userString.university;
+            label2.Text = userString.ratingAverage;
+            label3.Text = userString.university;
+            label4.Text = userString.selectedLanguage;
+
+            groupBox1.Text = userString.nameRequestUniversity;
+            groupBox2.Text = userString.nameRequestRating;
         }
 
         private void savePdf_Click(object sender, EventArgs e)
@@ -121,26 +142,6 @@ namespace GGB
         {
             if (GetRequestAverageRating != null)
                 GetRequestAverageRating(this, EventArgs.Empty);
-        }
-
-        public void SetLanguage(IUserString userString)
-        {
-            savePdf.Text = userString.buttonSavePdf;
-            saveExcel.Text = userString.buttonSaveExcel;
-
-            requestAverageRating.Text = userString.buttonNameRequest;
-            requestStudentUniversity.Text = userString.buttonNameRequest;
-
-            label1.Text = userString.university;
-            label2.Text = userString.ratingAverage;
-            label3.Text = userString.university;
-            label4.Text = userString.selectedLanguage;
-
-            groupBox1.Text = userString.nameRequestUniversity;
-            groupBox2.Text = userString.nameRequestRating;
-
-            //comboBox2.Items.Clear();
-            //comboBox2.Items.AddRange(Constant.comboLanguage);
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

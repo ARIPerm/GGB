@@ -29,9 +29,10 @@ namespace GGB
 
         //получаем от пользователя текст запроса, через форму
 
-        string SelectedUniversity { get; }
+        int SelectedUniversity { get; }
+        int SelectedUniversityBox { get; }
 
-        string AverageRating { get; }
+        int AverageRating { get; }
         
         string PathGet { get; }
 
