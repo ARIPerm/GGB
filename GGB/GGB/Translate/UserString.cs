@@ -9,8 +9,6 @@ namespace GGB
 {
     public class UserString : IUserString
     {
-
-
         public string nameRequestUniversity { get; set;  }
         public string nameRequestRating { get; set; }
         public string university { get; set; }
@@ -52,13 +50,10 @@ namespace GGB
             }
             catch (Utils.LangExeption e)
             {
-                //сделать через вью
                 Console.WriteLine($"Ошибка: {e.Message}");
                 language = "ru-en";
             }
 
-
-            //TODO: разделить перевод на потоки
             nameRequestUniversity = yandexTranslate.Translate(nameRequestUniversity, language);
             nameRequestRating = yandexTranslate.Translate(nameRequestRating, language);
 
@@ -81,9 +76,7 @@ namespace GGB
             {
                 Constant.comboLanguage[i] = yandexTranslate.Translate(Constant.comboLanguage[i], language);
             }
-
         }
-
 
         public void SettingLaunguage(string lang)
         {
@@ -99,7 +92,6 @@ namespace GGB
                 language = "ru-en";
             }
 
-
             Translator translate1 = new Translator(language, nameRequestUniversity, yandexTranslate);
 
             Thread thread = new Thread(new ThreadStart(translate1.SetLanguageWithTread));
@@ -108,12 +100,7 @@ namespace GGB
             
             if (thread.ThreadState == ThreadState.Stopped)
                 nameRequestUniversity = translate1.text + "gfagfsag";
-
-
         }
-
-
-
     }
 
     public class Translator
@@ -134,5 +121,4 @@ namespace GGB
             text = yandexTranslate.Translate(text, lang);
         }
     }
-
 }
